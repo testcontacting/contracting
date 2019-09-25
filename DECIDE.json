@@ -1207,6 +1207,15 @@
     {
       "vmId": "0",
       "csId": "13",
+      "ownCredentials": true,
+      "cspName": "Amazon EC2 CloudBroker GmbH",
+      "cspId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+      "accessKeyIdentifier": "к4к4к",
+      "secretAccessKey": "4к4к4к"
+    },
+    {
+      "vmId": "1",
+      "csId": "13",
       "cspName": "Amazon",
       "cspId": "AMAZ",
       "ram": 4,
@@ -1217,10 +1226,10 @@
       "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "32a280ad-dbdd-4d74-b543-938f22d32e8c",
+      "keyPairId": "741c7ac8-e6d3-4e36-990a-dd66ddf2ec55",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "cloudbrokerUsername": "acsmi-01a26b9bd650bc030496@cloudbroker.com",
-      "cloudbrokerPassword": "bd1ac78e6e83b88d39d25e65"
+      "cloudbrokerUsername": "acsmi-20f4e142701b59616e66@cloudbroker.com",
+      "cloudbrokerPassword": "c6f15f533e0e1706a7df747a"
     }
   ]
 }
