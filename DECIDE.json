@@ -1217,28 +1217,10 @@
       "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "2bc01b59-e198-4192-bfc9-dd717691944d",
+      "keyPairId": "32a280ad-dbdd-4d74-b543-938f22d32e8c",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "cloudbrokerUsername": "acsmi-62bbfb05e3154f286281@cloudbroker.com",
-      "cloudbrokerPassword": "0dec45ce27c76a3159747f2b"
-    },
-    {
-      "vmId": "1",
-      "csId": "47",
-      "cspName": "CloudSigma",
-      "cspId": "CLSI",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "c1fb1543-54aa-4247-91ee-3ea9a553f64e",
-      "vmRegionId": "4265ddb9-e862-4814-82a4-d6b92f25e8e5",
-      "instanceTypeId": "8c1ffcb7-4f50-42d7-8e88-bc7b8184b3cc",
-      "keyPairId": "2bc01b59-e198-4192-bfc9-dd717691944d",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "cloudbrokerUsername": "acsmi-62bbfb05e3154f286281@cloudbroker.com",
-      "cloudbrokerPassword": "0dec45ce27c76a3159747f2b"
+      "cloudbrokerUsername": "acsmi-01a26b9bd650bc030496@cloudbroker.com",
+      "cloudbrokerPassword": "bd1ac78e6e83b88d39d25e65"
     }
   ]
 }
