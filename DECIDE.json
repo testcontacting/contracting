@@ -1217,10 +1217,10 @@
       "vmResourceId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
       "vmRegionId": "d112253a-951f-417a-a1f1-3a892bf35a45",
       "instanceTypeId": "f554e8a1-29d8-48e5-bd68-c01417576628",
-      "keyPairId": "6825bef6-aa28-460b-a50f-1e5808e19c23",
+      "keyPairId": "cdda4fde-bbd2-4edc-83f5-2f43391ad8ab",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "cloudbrokerUsername": "acsmi-788dcc505535560418d5@cloudbroker.com",
-      "cloudbrokerPassword": "5ad7b6aa4d7483e786e6a936"
+      "cloudbrokerUsername": "acsmi-486a578c3f1cd79ba0d6@cloudbroker.com",
+      "cloudbrokerPassword": "f324957a7b63234d4f8484b5"
     }
   ]
 }
