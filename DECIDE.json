@@ -1200,20 +1200,6 @@
       ],
       "csId": "7",
       "vmId": 1
-    },
-    {
-      "microservices": [
-        "8d44eb2e-dedc-4fa3-8a25-3082a156d670"
-      ],
-      "csId": "13",
-      "vmId": 2
-    },
-    {
-      "microservices": [
-        "iiiiib2e-dedc-4fa3-8a25-3082a156d670"
-      ],
-      "csId": "13",
-      "vmId": 3
     }
   ],
   "virtualMachines": [
