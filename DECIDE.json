@@ -1220,42 +1220,6 @@
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
       "cloudbrokerUsername": "acsmi-ff9bcca794ec0cdbbe87@cloudbroker.com",
       "cloudbrokerPassword": "a0cb39f6f80248109c7ef328"
-    },
-    {
-      "vmId": "2",
-      "csId": "13",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "120972e5-2b18-40bf-9997-5a9ac91dfa29",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "cloudbrokerUsername": "acsmi-ff9bcca794ec0cdbbe87@cloudbroker.com",
-      "cloudbrokerPassword": "a0cb39f6f80248109c7ef328"
-    },
-    {
-      "vmId": "3",
-      "csId": "13",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "120972e5-2b18-40bf-9997-5a9ac91dfa29",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "cloudbrokerUsername": "acsmi-ff9bcca794ec0cdbbe87@cloudbroker.com",
-      "cloudbrokerPassword": "a0cb39f6f80248109c7ef328"
     }
   ]
 }
