@@ -1206,7 +1206,7 @@
   "virtualMachines": [
     {
       "vmId": "0",
-      "csId": "8",
+      "csId": "7",
       "cspName": "Arsys",
       "cspId": "ARSY",
       "ram": 2,
@@ -1217,10 +1217,10 @@
       "vmResourceId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
       "vmRegionId": "d112253a-951f-417a-a1f1-3a892bf35a45",
       "instanceTypeId": "f554e8a1-29d8-48e5-bd68-c01417576628",
-      "keyPairId": "79d7b834-d5c8-4094-8fae-7e02c001dabc",
+      "keyPairId": "9af60076-4a45-443c-92fc-0a57e0bf8235",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "cloudbrokerUsername": "acsmi-84f2e01d057cf5ae6d9d@cloudbroker.com",
-      "cloudbrokerPassword": "48a18d9a2c035a71988c0146"
+      "cloudbrokerUsername": "acsmi-aa27251855f101dbd8ca@cloudbroker.com",
+      "cloudbrokerPassword": "4c2da10011ddc7e5740c2652"
     }
   ]
 }
