@@ -1211,7 +1211,7 @@
   ],
   "virtualMachines": [
     {
-      "vmId": "1",
+      "vmId": "0",
       "csId": "7",
       "cspName": "Arsys",
       "cspId": "ARSY",
@@ -1223,24 +1223,6 @@
       "vmResourceId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
       "vmRegionId": "d112253a-951f-417a-a1f1-3a892bf35a45",
       "instanceTypeId": "f554e8a1-29d8-48e5-bd68-c01417576628",
-      "keyPairId": "9af60076-4a45-443c-92fc-0a57e0bf8235",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "cloudbrokerUsername": "acsmi-aa27251855f101dbd8ca@cloudbroker.com",
-      "cloudbrokerPassword": "4c2da10011ddc7e5740c2652"
-    },
-    {
-      "vmId": "2",
-      "csId": "13",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "9af60076-4a45-443c-92fc-0a57e0bf8235",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
       "cloudbrokerUsername": "acsmi-aa27251855f101dbd8ca@cloudbroker.com",
