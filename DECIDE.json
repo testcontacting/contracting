@@ -1204,7 +1204,7 @@
   ],
   "virtualMachines": [
     {
-      "vmId": "0",
+      "vmId": "1",
       "csId": "7",
       "cspName": "Arsys",
       "cspId": "ARSY",
