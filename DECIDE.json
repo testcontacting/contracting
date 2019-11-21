@@ -1208,7 +1208,8 @@
       "csId": "3",
       "ownCredentials": true,
       "cspName": "Arsys CloudBuilder CloudBroker GmbH",
-      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420"
+      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
+      "apiToken": "weqweqrwqqer"
     },
     {
       "vmId": "1",
@@ -1216,21 +1217,23 @@
       "ownCredentials": true,
       "cspName": "Arsys CloudBuilder CloudBroker GmbH",
       "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
-      "apiToken": "qwewqeqwe"
+      "apiToken": "weqweqrwqqer"
     },
     {
       "vmId": "2",
       "csId": "8",
       "ownCredentials": true,
       "cspName": "Arsys CloudBuilder CloudBroker GmbH",
-      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420"
+      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
+      "apiToken": "weqweqrwqqer"
     },
     {
       "vmId": "3",
       "csId": "10",
       "ownCredentials": true,
       "cspName": "Arsys CloudBuilder CloudBroker GmbH",
-      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420"
+      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
+      "apiToken": "weqweqrwqqer"
     }
   ]
 }
