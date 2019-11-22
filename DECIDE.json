@@ -1204,36 +1204,20 @@
   ],
   "virtualMachines": [
     {
-      "vmId": "0",
-      "csId": "3",
-      "ownCredentials": true,
-      "cspName": "Arsys CloudBuilder CloudBroker GmbH",
-      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
-      "apiToken": "weqweqrwqqer"
-    },
-    {
       "vmId": "1",
-      "csId": "5",
-      "ownCredentials": true,
-      "cspName": "Arsys CloudBuilder CloudBroker GmbH",
-      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
-      "apiToken": "weqweqrwqqer"
-    },
-    {
-      "vmId": "2",
-      "csId": "8",
-      "ownCredentials": true,
-      "cspName": "Arsys CloudBuilder CloudBroker GmbH",
-      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
-      "apiToken": "weqweqrwqqer"
-    },
-    {
-      "vmId": "3",
-      "csId": "10",
-      "ownCredentials": true,
-      "cspName": "Arsys CloudBuilder CloudBroker GmbH",
-      "cspId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
-      "apiToken": "weqweqrwqqer"
+      "csId": "7",
+      "cspName": "Arsys",
+      "cspId": "ARSY",
+      "ram": 2,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
+      "vmRegionId": "d112253a-951f-417a-a1f1-3a892bf35a45",
+      "instanceTypeId": "f554e8a1-29d8-48e5-bd68-c01417576628",
+      "keyPairId": "84341391-a579-4886-a84d-75695525394c",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     }
   ]
 }
