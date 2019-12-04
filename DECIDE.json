@@ -1216,7 +1216,7 @@
       "vmResourceId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
       "vmRegionId": "d112253a-951f-417a-a1f1-3a892bf35a45",
       "instanceTypeId": "f554e8a1-29d8-48e5-bd68-c01417576628",
-      "keyPairId": "e52a35c0-57c2-4ef6-8482-57043c9b5175",
+      "keyPairId": "1256bc43-3bfc-44c2-b08c-72df0e371ee8",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     }
   ]
