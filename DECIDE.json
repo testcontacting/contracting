@@ -488,54 +488,7 @@
     }
   ],
   "virtualMachines": [
-    {
-      "vmId": "0",
-      "csId": "48",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "f799c862-2236-4400-8126-77c614510ec5",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    },
-    {
-      "vmId": "1",
-      "csId": "48",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "f799c862-2236-4400-8126-77c614510ec5",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    },
-    {
-      "vmId": "2",
-      "csId": "22",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "f799c862-2236-4400-8126-77c614510ec5",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    }
+
   ],
   "recommendedPatterns": [
     {
