@@ -1,643 +1,823 @@
 {
-  "id" : "87834a87-1d15-4cea-946f-314866f9d1f8",
-  "name" : "ArsysTest",
-  "description" : "ArsysTest2",
-  "version" : "0.2.2-alpha",
-  "highTechnologicalRisk" : false,
-  "preferredProvider" : "Amazon",
-  "nfrs" : [ {
-    "type" : "Availability",
-    "tags" : [ "Application" ],
-    "abstractValue" : "Medium",
-    "value" : 98.0,
-    "unit" : "percentage"
-  }, {
-    "type" : "Performance",
-    "tags" : [ "Application" ],
-    "abstractValue" : "High",
-    "value" : 100.0,
-    "unit" : "millisecond"
-  }, {
-    "type" : "Location",
-    "tags" : [ "Application" ],
-    "abstractValue" : "Single Location",
-    "value" : {
-      "region" : "Europe",
-      "zone" : "Spain"
-    }
-  } ],
-  "microservices" : [ {
-    "id" : "1fc92915-fe58-44d3-8061-65e9757fd082",
-    "name" : "notif-web",
-    "classification" : "Computing",
-    "stateful" : false,
-    "programmingLanguage" : "Angular",
-    "tags" : [ "Application" ],
-    "publicIP" : false,
-    "endpoints" : [ "" ],
-    "safeMethods" : [ {
-      "port" : "80",
-      "path" : "/notif-web"
-    } ],
-    "detachableResources" : [ {
-      "id" : "582b4d8b-8489-45ca-8cc8-127539d729f5",
-      "name" : "none",
-      "db" : false,
-      "classification" : "storage"
-    } ]
-  }, {
-    "id" : "be0ca3ef-c261-443f-a66c-8790aad81721",
-    "name" : "notif-ddbb",
-    "classification" : "Computing",
-    "stateful" : false,
-    "programmingLanguage" : "MySQL",
-    "tags" : [ "Application" ],
-    "publicIP" : false,
-    "endpoints" : [ "" ],
-    "detachableResources" : [ {
-      "id" : "4ad9a28c-7e1b-4d2d-bfff-dd02752f2147",
-      "name" : "none",
-      "db" : false,
-      "classification" : "storage"
-    } ]
-  }, {
-    "id" : "66296311-5512-4142-8eca-b464ad7ca1a2",
-    "name" : "notif-mail",
-    "classification" : "Computing",
-    "stateful" : false,
-    "programmingLanguage" : "Java",
-    "tags" : [ "Application" ],
-    "publicIP" : false,
-    "endpoints" : [ "" ],
-    "detachableResources" : [ {
-      "id" : "1acffcb5-3079-4d59-876a-e90d48d942c2",
-      "name" : "none",
-      "db" : false,
-      "classification" : "storage"
-    } ]
-  } ],
-  "mcsla" : {
-    "sla" : {
-      "description" : "ArsysTest Service Level Agreement",
-      "objectives" : [ {
-        "termName" : "Performance",
-        "type" : "slo",
-        "value" : "98.0",
-        "unit" : "millisecond",
-        "conditionStatement" : "lessOrEqual",
-        "metrics" : [ {
-          "id" : "CSA_PE_001",
-          "descriptor" : "Maximum response time for a request",
-          "scale" : "ratio",
-          "expression" : {
-            "expression" : "AGGREGATION_MAXTYPE",
-            "expressionLanguage" : "predefined",
-            "note" : "max(term<1>, ...term<n>)",
-            "unit" : "millisecond"
-          },
-          "underlyingMetrics" : [ {
-            "id" : "1fc92915-fe58-44d3-8061-65e9757fd082",
-            "scale" : "ratio",
-            "note" : "notif-web",
-            "expression" : {
-              "expression" : "EMPTY",
-              "expressionLanguage" : "predefined",
-              "unit" : "millisecond"
-            }
-          }, {
-            "id" : "be0ca3ef-c261-443f-a66c-8790aad81721",
-            "scale" : "ratio",
-            "note" : "notif-ddbb",
-            "expression" : {
-              "expression" : "EMPTY",
-              "expressionLanguage" : "predefined",
-              "unit" : "millisecond"
-            }
-          }, {
-            "id" : "66296311-5512-4142-8eca-b464ad7ca1a2",
-            "scale" : "ratio",
-            "note" : "notif-mail",
-            "expression" : {
-              "expression" : "EMPTY",
-              "expressionLanguage" : "predefined",
-              "unit" : "millisecond"
-            }
-          } ]
-        } ]
-      }, {
-        "termName" : "Performance",
-        "type" : "slo",
-        "value" : "100.0",
-        "unit" : "millisecond",
-        "conditionStatement" : "lessOrEqual",
-        "metrics" : [ {
-          "id" : "CSA_PE_001",
-          "descriptor" : "Maximum response time for a request",
-          "scale" : "ratio",
-          "expression" : {
-            "expression" : "AGGREGATION_MAXTYPE",
-            "expressionLanguage" : "predefined",
-            "note" : "max(term<1>, ...term<n>)",
-            "unit" : "millisecond"
-          },
-          "underlyingMetrics" : [ {
-            "id" : "1fc92915-fe58-44d3-8061-65e9757fd082",
-            "scale" : "ratio",
-            "note" : "notif-web",
-            "expression" : {
-              "expression" : "EMPTY",
-              "expressionLanguage" : "predefined",
-              "unit" : "millisecond"
-            }
-          }, {
-            "id" : "be0ca3ef-c261-443f-a66c-8790aad81721",
-            "scale" : "ratio",
-            "note" : "notif-ddbb",
-            "expression" : {
-              "expression" : "EMPTY",
-              "expressionLanguage" : "predefined",
-              "unit" : "millisecond"
-            }
-          }, {
-            "id" : "66296311-5512-4142-8eca-b464ad7ca1a2",
-            "scale" : "ratio",
-            "note" : "notif-mail",
-            "expression" : {
-              "expression" : "EMPTY",
-              "expressionLanguage" : "predefined",
-              "unit" : "millisecond"
-            }
-          } ]
-        } ]
-      } ]
+  "id": "87834a87-1d15-4cea-946f-314866f9d1f8",
+  "name": "ArsysTest",
+  "description": "ArsysTest2",
+  "version": "0.2.2-alpha",
+  "highTechnologicalRisk": false,
+  "preferredProvider": "Amazon",
+  "nfrs": [
+    {
+      "type": "Availability",
+      "tags": [
+        "Application"
+      ],
+      "abstractValue": "Medium",
+      "value": 98.0,
+      "unit": "percentage"
     },
-    "csSlas" : {
-      "22" : {
-        "description" : "r4.xlarge",
-        "coveredServices" : [ "Virtual Machine" ],
-        "objectives" : [ {
-          "termName" : "Region",
-          "type" : "sqo",
-          "value" : "North America",
-          "conditionStatement" : "equal"
-        }, {
-          "termName" : "Zone",
-          "type" : "sqo",
-          "value" : "United States",
-          "conditionStatement" : "equal"
-        }, {
-          "termName" : "Provider",
-          "type" : "sqo",
-          "value" : "Amazon",
-          "conditionStatement" : "equal"
-        }, {
-          "termName" : "Availability",
-          "type" : "slo",
-          "value" : "98.5",
-          "unit" : "percentage",
-          "conditionStatement" : "greaterOrEqual",
-          "metrics" : [ {
-            "id" : "CS_22_001",
-            "descriptor" : "Uptime during a specific time period",
-            "scale" : "ratio",
-            "expression" : {
-              "expression" : "AVAILABILITY_UPTIME_BC",
-              "expressionLanguage" : "predefined",
-              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
-              "unit" : "percentage"
+    {
+      "type": "Performance",
+      "tags": [
+        "Application"
+      ],
+      "abstractValue": "High",
+      "value": 100.0,
+      "unit": "millisecond"
+    },
+    {
+      "type": "Location",
+      "tags": [
+        "Application"
+      ],
+      "abstractValue": "Single Location",
+      "value": {
+        "region": "Europe",
+        "zone": "Spain"
+      }
+    }
+  ],
+  "microservices": [
+    {
+      "id": "1fc92915-fe58-44d3-8061-65e9757fd082",
+      "name": "notif-web",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "Angular",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "safeMethods": [
+        {
+          "port": "80",
+          "path": "/notif-web"
+        }
+      ],
+      "detachableResources": [
+        {
+          "id": "582b4d8b-8489-45ca-8cc8-127539d729f5",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ]
+    },
+    {
+      "id": "be0ca3ef-c261-443f-a66c-8790aad81721",
+      "name": "notif-ddbb",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "MySQL",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "detachableResources": [
+        {
+          "id": "4ad9a28c-7e1b-4d2d-bfff-dd02752f2147",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ]
+    },
+    {
+      "id": "66296311-5512-4142-8eca-b464ad7ca1a2",
+      "name": "notif-mail",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "Java",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "detachableResources": [
+        {
+          "id": "1acffcb5-3079-4d59-876a-e90d48d942c2",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ]
+    }
+  ],
+  "mcsla": {
+    "sla": {
+      "description": "ArsysTest Service Level Agreement",
+      "objectives": [
+        {
+          "termName": "Performance",
+          "type": "slo",
+          "value": "98.0",
+          "unit": "millisecond",
+          "conditionStatement": "lessOrEqual",
+          "metrics": [
+            {
+              "id": "CSA_PE_001",
+              "descriptor": "Maximum response time for a request",
+              "scale": "ratio",
+              "expression": {
+                "expression": "AGGREGATION_MAXTYPE",
+                "expressionLanguage": "predefined",
+                "note": "max(term<1>, ...term<n>)",
+                "unit": "millisecond"
+              },
+              "underlyingMetrics": [
+                {
+                  "id": "1fc92915-fe58-44d3-8061-65e9757fd082",
+                  "scale": "ratio",
+                  "note": "notif-web",
+                  "expression": {
+                    "expression": "EMPTY",
+                    "expressionLanguage": "predefined",
+                    "unit": "millisecond"
+                  }
+                },
+                {
+                  "id": "be0ca3ef-c261-443f-a66c-8790aad81721",
+                  "scale": "ratio",
+                  "note": "notif-ddbb",
+                  "expression": {
+                    "expression": "EMPTY",
+                    "expressionLanguage": "predefined",
+                    "unit": "millisecond"
+                  }
+                },
+                {
+                  "id": "66296311-5512-4142-8eca-b464ad7ca1a2",
+                  "scale": "ratio",
+                  "note": "notif-mail",
+                  "expression": {
+                    "expression": "EMPTY",
+                    "expressionLanguage": "predefined",
+                    "unit": "millisecond"
+                  }
+                }
+              ]
             }
-          } ]
-        }, {
-          "comment" : "Response time: Virtual Machine Performance",
-          "termName" : "Performance",
-          "type" : "slo",
-          "value" : "2",
-          "unit" : "millisecond",
-          "conditionStatement" : "lessOrEqual",
-          "metrics" : [ {
-            "id" : "CS_22_001",
-            "descriptor" : "Response time for a request",
-            "scale" : "interval",
-            "expression" : {
-              "expression" : "EMPTY",
-              "expressionLanguage" : "predefined",
-              "note" : "delta(t)",
-              "unit" : "millisecond"
+          ]
+        },
+        {
+          "termName": "Performance",
+          "type": "slo",
+          "value": "100.0",
+          "unit": "millisecond",
+          "conditionStatement": "lessOrEqual",
+          "metrics": [
+            {
+              "id": "CSA_PE_001",
+              "descriptor": "Maximum response time for a request",
+              "scale": "ratio",
+              "expression": {
+                "expression": "AGGREGATION_MAXTYPE",
+                "expressionLanguage": "predefined",
+                "note": "max(term<1>, ...term<n>)",
+                "unit": "millisecond"
+              },
+              "underlyingMetrics": [
+                {
+                  "id": "1fc92915-fe58-44d3-8061-65e9757fd082",
+                  "scale": "ratio",
+                  "note": "notif-web",
+                  "expression": {
+                    "expression": "EMPTY",
+                    "expressionLanguage": "predefined",
+                    "unit": "millisecond"
+                  }
+                },
+                {
+                  "id": "be0ca3ef-c261-443f-a66c-8790aad81721",
+                  "scale": "ratio",
+                  "note": "notif-ddbb",
+                  "expression": {
+                    "expression": "EMPTY",
+                    "expressionLanguage": "predefined",
+                    "unit": "millisecond"
+                  }
+                },
+                {
+                  "id": "66296311-5512-4142-8eca-b464ad7ca1a2",
+                  "scale": "ratio",
+                  "note": "notif-mail",
+                  "expression": {
+                    "expression": "EMPTY",
+                    "expressionLanguage": "predefined",
+                    "unit": "millisecond"
+                  }
+                }
+              ]
             }
-          } ]
-        }, {
-          "termName" : "Cost",
-          "type" : "slo",
-          "value" : "214",
-          "unit" : "euro",
-          "conditionStatement" : "less"
-        }, {
-          "termName" : "Smart contracting",
-          "value" : "YES"
-        } ]
+          ]
+        }
+      ]
+    },
+    "csSlas": {
+      "22": {
+        "description": "r4.xlarge",
+        "coveredServices": [
+          "Virtual Machine"
+        ],
+        "objectives": [
+          {
+            "termName": "Region",
+            "type": "sqo",
+            "value": "North America",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Zone",
+            "type": "sqo",
+            "value": "United States",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Provider",
+            "type": "sqo",
+            "value": "Amazon",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Availability",
+            "type": "slo",
+            "value": "98.5",
+            "unit": "percentage",
+            "conditionStatement": "greaterOrEqual",
+            "metrics": [
+              {
+                "id": "CS_22_001",
+                "descriptor": "Uptime during a specific time period",
+                "scale": "ratio",
+                "expression": {
+                  "expression": "AVAILABILITY_UPTIME_BC",
+                  "expressionLanguage": "predefined",
+                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
+                  "unit": "percentage"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Response time: Virtual Machine Performance",
+            "termName": "Performance",
+            "type": "slo",
+            "value": "2",
+            "unit": "millisecond",
+            "conditionStatement": "lessOrEqual",
+            "metrics": [
+              {
+                "id": "CS_22_001",
+                "descriptor": "Response time for a request",
+                "scale": "interval",
+                "expression": {
+                  "expression": "EMPTY",
+                  "expressionLanguage": "predefined",
+                  "note": "delta(t)",
+                  "unit": "millisecond"
+                }
+              }
+            ]
+          },
+          {
+            "termName": "Cost",
+            "type": "slo",
+            "value": "214",
+            "unit": "euro",
+            "conditionStatement": "less"
+          },
+          {
+            "termName": "Smart contracting",
+            "value": "YES"
+          }
+        ]
       },
-      "48" : {
-        "description" : "m1.medium",
-        "coveredServices" : [ "Virtual Machine" ],
-        "objectives" : [ {
-          "termName" : "Region",
-          "type" : "sqo",
-          "value" : "North America",
-          "conditionStatement" : "equal"
-        }, {
-          "termName" : "Zone",
-          "type" : "sqo",
-          "value" : "United States",
-          "conditionStatement" : "equal"
-        }, {
-          "termName" : "Provider",
-          "type" : "sqo",
-          "value" : "Amazon",
-          "conditionStatement" : "equal"
-        }, {
-          "termName" : "Availability",
-          "type" : "slo",
-          "value" : "98",
-          "unit" : "percentage",
-          "conditionStatement" : "greaterOrEqual",
-          "metrics" : [ {
-            "id" : "CS_48_001",
-            "descriptor" : "Uptime during a specific time period",
-            "scale" : "ratio",
-            "expression" : {
-              "expression" : "AVAILABILITY_UPTIME_BC",
-              "expressionLanguage" : "predefined",
-              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
-              "unit" : "percentage"
-            }
-          } ]
-        }, {
-          "comment" : "Response time: Virtual Machine Performance",
-          "termName" : "Performance",
-          "type" : "slo",
-          "value" : "100",
-          "unit" : "millisecond",
-          "conditionStatement" : "lessOrEqual",
-          "metrics" : [ {
-            "id" : "CS_48_001",
-            "descriptor" : "Response time for a request",
-            "scale" : "interval",
-            "expression" : {
-              "expression" : "EMPTY",
-              "expressionLanguage" : "predefined",
-              "note" : "delta(t)",
-              "unit" : "millisecond"
-            }
-          } ]
-        }, {
-          "termName" : "Cost",
-          "type" : "slo",
-          "value" : "200",
-          "unit" : "euro",
-          "conditionStatement" : "less"
-        }, {
-          "termName" : "Smart contracting",
-          "value" : "YES"
-        } ]
+      "48": {
+        "description": "m1.medium",
+        "coveredServices": [
+          "Virtual Machine"
+        ],
+        "objectives": [
+          {
+            "termName": "Region",
+            "type": "sqo",
+            "value": "North America",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Zone",
+            "type": "sqo",
+            "value": "United States",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Provider",
+            "type": "sqo",
+            "value": "Amazon",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Availability",
+            "type": "slo",
+            "value": "98",
+            "unit": "percentage",
+            "conditionStatement": "greaterOrEqual",
+            "metrics": [
+              {
+                "id": "CS_48_001",
+                "descriptor": "Uptime during a specific time period",
+                "scale": "ratio",
+                "expression": {
+                  "expression": "AVAILABILITY_UPTIME_BC",
+                  "expressionLanguage": "predefined",
+                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
+                  "unit": "percentage"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Response time: Virtual Machine Performance",
+            "termName": "Performance",
+            "type": "slo",
+            "value": "100",
+            "unit": "millisecond",
+            "conditionStatement": "lessOrEqual",
+            "metrics": [
+              {
+                "id": "CS_48_001",
+                "descriptor": "Response time for a request",
+                "scale": "interval",
+                "expression": {
+                  "expression": "EMPTY",
+                  "expressionLanguage": "predefined",
+                  "note": "delta(t)",
+                  "unit": "millisecond"
+                }
+              }
+            ]
+          },
+          {
+            "termName": "Cost",
+            "type": "slo",
+            "value": "200",
+            "unit": "euro",
+            "conditionStatement": "less"
+          },
+          {
+            "termName": "Smart contracting",
+            "value": "YES"
+          }
+        ]
       }
     }
   },
-  "containers" : [ {
-    "containerName" : "notif-web",
-    "imageName" : "notif-web",
-    "imageTag" : "latest",
-    "dockerPrivateRegistryIp" : "82.223.67.61",
-    "dockerPrivateRegistryPort" : 5000,
-    "dockerPrivateRegistryUser" : "saguado",
-    "dockerPrivateRegistryPassword" : "M0r0s3t3",
-    "hostname" : "notif-web",
-    "restart" : "no",
-    "dockerHostNodeName" : "VM0_Amazon_Ubuntu16_04",
-    "hostMapping" : [ {
-      "referencedContainerName" : "notif-ddbb",
-      "host" : "cloudCTC_sql-server"
-    }, {
-      "referencedContainerName" : "notif-mail",
-      "host" : "cloudCTC_mail-server"
-    } ],
-    "addConsulService" : 1,
-    "consulServicePort" : 8080,
-    "portMapping" : [ {
-      "hostPort" : "8080",
-      "containerPort" : "8080"
-    }, {
-      "hostPort" : "80",
-      "containerPort" : "80"
-    }, {
-      "hostPort" : "443",
-      "containerPort" : "443"
-    } ]
-  }, {
-    "containerName" : "notif-ddbb",
-    "imageName" : "notif-ddbb",
-    "imageTag" : "latest",
-    "dockerPrivateRegistryIp" : "82.223.67.61",
-    "dockerPrivateRegistryPort" : 5000,
-    "dockerPrivateRegistryUser" : "saguado",
-    "dockerPrivateRegistryPassword" : "M0r0s3t3",
-    "hostname" : "notif-ddbb",
-    "restart" : "no",
-    "dockerHostNodeName" : "VM1_Amazon_Ubuntu16_04",
-    "hostMapping" : [ {
-      "referencedContainerName" : "notif-web",
-      "host" : "cloudCTC_web-server"
-    }, {
-      "referencedContainerName" : "notif-mail",
-      "host" : "cloudCTC_mail-server"
-    } ],
-    "addConsulService" : 1,
-    "consulServicePort" : 8080,
-    "portMapping" : [ {
-      "hostPort" : "8080",
-      "containerPort" : "8080"
-    }, {
-      "hostPort" : "1433",
-      "containerPort" : "1433"
-    } ]
-  }, {
-    "containerName" : "notif-mail",
-    "imageName" : "notif-mail",
-    "imageTag" : "latest",
-    "dockerPrivateRegistryIp" : "82.223.67.61",
-    "dockerPrivateRegistryPort" : 5000,
-    "dockerPrivateRegistryUser" : "saguado",
-    "dockerPrivateRegistryPassword" : "M0r0s3t3",
-    "hostname" : "notif-mail",
-    "restart" : "no",
-    "dockerHostNodeName" : "VM2_Amazon_Ubuntu16_04",
-    "hostMapping" : [ {
-      "referencedContainerName" : "notif-ddbb",
-      "host" : "cloudCTC_sql-server"
-    }, {
-      "referencedContainerName" : "notif-web",
-      "host" : "cloudCTC_web-server"
-    } ],
-    "addConsulService" : 1,
-    "consulServicePort" : 8080,
-    "portMapping" : [ {
-      "hostPort" : "8080",
-      "containerPort" : "8080"
-    }, {
-      "hostPort" : "587",
-      "containerPort" : "587"
-    } ]
-  } ],
-  "virtualMachines" : [ {
-    "csId" : "48",
-    "vmId" : "0",
-    "cspId" : "AMAZ",
-    "cspName" : "Amazon",
-    "ram" : 4,
-    "cores" : 2,
-    "storage" : 1,
-    "image" : "Ubuntu 16.04",
-    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-    "vmResourceId" : "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-    "vmRegionId" : "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-    "vmUser" : "ubuntu",
-    "instanceTypeId" : "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-    "keyPairId" : "02c94451-946c-4207-b8d5-962de7852a81",
-    "openedPorts" : "22,80,8000-9000,9411",
-    "dockerPrivateRegistryIp" : "82.223.67.61",
-    "dockerPrivateRegistryPort" : 5000,
-    "dockerHostNodeName" : "VM0_Amazon_Ubuntu16_04",
-    "dockerHostPublicIp" : "54.173.13.149",
-    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
-  }, {
-    "csId" : "48",
-    "vmId" : "1",
-    "cspId" : "AMAZ",
-    "cspName" : "Amazon",
-    "ram" : 4,
-    "cores" : 2,
-    "storage" : 1,
-    "image" : "Ubuntu 16.04",
-    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-    "vmResourceId" : "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-    "vmRegionId" : "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-    "vmUser" : "ubuntu",
-    "instanceTypeId" : "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-    "keyPairId" : "02c94451-946c-4207-b8d5-962de7852a81",
-    "openedPorts" : "22,80,8000-9000,9411",
-    "dockerPrivateRegistryIp" : "82.223.67.61",
-    "dockerPrivateRegistryPort" : 5000,
-    "dockerHostNodeName" : "VM1_Amazon_Ubuntu16_04",
-    "dockerHostPublicIp" : "54.91.222.89",
-    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
-  }, {
-    "csId" : "22",
-    "vmId" : "2",
-    "cspId" : "AMAZ",
-    "cspName" : "Amazon",
-    "ram" : 4,
-    "cores" : 2,
-    "storage" : 1,
-    "image" : "Ubuntu 16.04",
-    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-    "vmResourceId" : "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-    "vmRegionId" : "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-    "vmUser" : "ubuntu",
-    "instanceTypeId" : "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-    "keyPairId" : "02c94451-946c-4207-b8d5-962de7852a81",
-    "openedPorts" : "22,80,8000-9000,9411",
-    "dockerPrivateRegistryIp" : "82.223.67.61",
-    "dockerPrivateRegistryPort" : 5000,
-    "dockerHostNodeName" : "VM2_Amazon_Ubuntu16_04",
-    "dockerHostPublicIp" : "34.229.139.41",
-    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
-  } ],
-  "recommendedPatterns" : [ {
-    "isOptional" : false,
-    "title" : "Dynamic Data Normalization",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/dynamic-data-normalization",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Elasticity Manager",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/elasticity-manager",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    }, {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/scalability"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Micro Scatter-Gather",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/micro-scatter-gather",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Elastic Load Balancer",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/elastic-load-balancer",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    }, {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/availability"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Direct I/O Access",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/direct-io-access",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Content Distribution Network",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/content-distribution-network",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/deployment" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Throttling",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/throttling",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/availability"
-    }, {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Service State Management",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/service-state-management",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/development" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Cloud Storage Device Performance Enforcement",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/cloud-storage-device-performance-enforcement",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/development" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Elastic Queue",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/elastic-queue",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/scalability"
-    }, {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Direct LUN Access",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/direct-lun-access",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Usage Monitoring",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/usage-monitoring",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/development" ],
-    "selected" : false,
-    "provides" : [ {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
-    }, {
-      "abstractValue" : "high",
-      "impactedNFR" : "http://decideh2020.eu/resources/patterns/availability"
-    } ]
-  }, {
-    "isOptional" : false,
-    "title" : "Service Registry",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/service-registry",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
-    "selected" : false
-  }, {
-    "isOptional" : false,
-    "title" : "Two-Tier Cloud Application",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/two-tier-cloud-application",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
-    "selected" : false
-  }, {
-    "isOptional" : false,
-    "title" : "Loose Coupling",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/loose-coupling",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
-    "selected" : true
-  }, {
-    "isOptional" : false,
-    "title" : "Distributed Application",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/distributed-application",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
-    "selected" : true
-  }, {
-    "isOptional" : false,
-    "title" : "Three-Tier Cloud Application",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/three-tier-cloud-application",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
-    "selected" : false
-  }, {
-    "isOptional" : false,
-    "title" : "Managed Configuration",
-    "uriRef" : "http://decideh2020.eu/resources/patterns/managed-configuration",
-    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
-    "selected" : false
-  } ],
-  "schema" : [ {
-    "microservices" : [ "1fc92915-fe58-44d3-8061-65e9757fd082" ],
-    "csId" : "48",
-    "vmId" : 0
-  }, {
-    "microservices" : [ "be0ca3ef-c261-443f-a66c-8790aad81721" ],
-    "csId" : "48",
-    "vmId" : 1
-  }, {
-    "microservices" : [ "66296311-5512-4142-8eca-b464ad7ca1a2" ],
-    "csId" : "22",
-    "vmId" : 2
-  } ],
-  "monitoring" : {
-    "status" : true
+  "containers": [
+    {
+      "containerName": "notif-web",
+      "imageName": "notif-web",
+      "imageTag": "latest",
+      "dockerPrivateRegistryIp": "82.223.67.61",
+      "dockerPrivateRegistryPort": 5000,
+      "dockerPrivateRegistryUser": "saguado",
+      "dockerPrivateRegistryPassword": "M0r0s3t3",
+      "hostname": "notif-web",
+      "restart": "no",
+      "dockerHostNodeName": "VM0_Amazon_Ubuntu16_04",
+      "hostMapping": [
+        {
+          "referencedContainerName": "notif-ddbb",
+          "host": "cloudCTC_sql-server"
+        },
+        {
+          "referencedContainerName": "notif-mail",
+          "host": "cloudCTC_mail-server"
+        }
+      ],
+      "addConsulService": 1,
+      "consulServicePort": 8080,
+      "portMapping": [
+        {
+          "hostPort": "8080",
+          "containerPort": "8080"
+        },
+        {
+          "hostPort": "80",
+          "containerPort": "80"
+        },
+        {
+          "hostPort": "443",
+          "containerPort": "443"
+        }
+      ]
+    },
+    {
+      "containerName": "notif-ddbb",
+      "imageName": "notif-ddbb",
+      "imageTag": "latest",
+      "dockerPrivateRegistryIp": "82.223.67.61",
+      "dockerPrivateRegistryPort": 5000,
+      "dockerPrivateRegistryUser": "saguado",
+      "dockerPrivateRegistryPassword": "M0r0s3t3",
+      "hostname": "notif-ddbb",
+      "restart": "no",
+      "dockerHostNodeName": "VM1_Amazon_Ubuntu16_04",
+      "hostMapping": [
+        {
+          "referencedContainerName": "notif-web",
+          "host": "cloudCTC_web-server"
+        },
+        {
+          "referencedContainerName": "notif-mail",
+          "host": "cloudCTC_mail-server"
+        }
+      ],
+      "addConsulService": 1,
+      "consulServicePort": 8080,
+      "portMapping": [
+        {
+          "hostPort": "8080",
+          "containerPort": "8080"
+        },
+        {
+          "hostPort": "1433",
+          "containerPort": "1433"
+        }
+      ]
+    },
+    {
+      "containerName": "notif-mail",
+      "imageName": "notif-mail",
+      "imageTag": "latest",
+      "dockerPrivateRegistryIp": "82.223.67.61",
+      "dockerPrivateRegistryPort": 5000,
+      "dockerPrivateRegistryUser": "saguado",
+      "dockerPrivateRegistryPassword": "M0r0s3t3",
+      "hostname": "notif-mail",
+      "restart": "no",
+      "dockerHostNodeName": "VM2_Amazon_Ubuntu16_04",
+      "hostMapping": [
+        {
+          "referencedContainerName": "notif-ddbb",
+          "host": "cloudCTC_sql-server"
+        },
+        {
+          "referencedContainerName": "notif-web",
+          "host": "cloudCTC_web-server"
+        }
+      ],
+      "addConsulService": 1,
+      "consulServicePort": 8080,
+      "portMapping": [
+        {
+          "hostPort": "8080",
+          "containerPort": "8080"
+        },
+        {
+          "hostPort": "587",
+          "containerPort": "587"
+        }
+      ]
+    }
+  ],
+  "virtualMachines": [
+    {
+      "vmId": "0",
+      "csId": "48",
+      "cspName": "Amazon",
+      "cspId": "AMAZ",
+      "ram": 4,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+      "keyPairId": "0af74e23-4e42-41f9-92d8-b2f2da96acf8",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+    },
+    {
+      "vmId": "1",
+      "csId": "48",
+      "cspName": "Amazon",
+      "cspId": "AMAZ",
+      "ram": 4,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+      "keyPairId": "0af74e23-4e42-41f9-92d8-b2f2da96acf8",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+    },
+    {
+      "vmId": "2",
+      "csId": "22",
+      "cspName": "Amazon",
+      "cspId": "AMAZ",
+      "ram": 4,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+      "keyPairId": "0af74e23-4e42-41f9-92d8-b2f2da96acf8",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+    }
+  ],
+  "recommendedPatterns": [
+    {
+      "isOptional": false,
+      "title": "Dynamic Data Normalization",
+      "uriRef": "http://decideh2020.eu/resources/patterns/dynamic-data-normalization",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/optimization"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Elasticity Manager",
+      "uriRef": "http://decideh2020.eu/resources/patterns/elasticity-manager",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/optimization"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        },
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/scalability"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Micro Scatter-Gather",
+      "uriRef": "http://decideh2020.eu/resources/patterns/micro-scatter-gather",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/optimization"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Elastic Load Balancer",
+      "uriRef": "http://decideh2020.eu/resources/patterns/elastic-load-balancer",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/optimization"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        },
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/availability"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Direct I/O Access",
+      "uriRef": "http://decideh2020.eu/resources/patterns/direct-io-access",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/optimization"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Content Distribution Network",
+      "uriRef": "http://decideh2020.eu/resources/patterns/content-distribution-network",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/deployment"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Throttling",
+      "uriRef": "http://decideh2020.eu/resources/patterns/throttling",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/optimization"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/availability"
+        },
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Service State Management",
+      "uriRef": "http://decideh2020.eu/resources/patterns/service-state-management",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/development"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Cloud Storage Device Performance Enforcement",
+      "uriRef": "http://decideh2020.eu/resources/patterns/cloud-storage-device-performance-enforcement",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/development"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Elastic Queue",
+      "uriRef": "http://decideh2020.eu/resources/patterns/elastic-queue",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/optimization"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/scalability"
+        },
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Direct LUN Access",
+      "uriRef": "http://decideh2020.eu/resources/patterns/direct-lun-access",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/optimization"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Usage Monitoring",
+      "uriRef": "http://decideh2020.eu/resources/patterns/usage-monitoring",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/development"
+      ],
+      "selected": false,
+      "provides": [
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
+        },
+        {
+          "abstractValue": "high",
+          "impactedNFR": "http://decideh2020.eu/resources/patterns/availability"
+        }
+      ]
+    },
+    {
+      "isOptional": false,
+      "title": "Service Registry",
+      "uriRef": "http://decideh2020.eu/resources/patterns/service-registry",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/basic"
+      ],
+      "selected": false
+    },
+    {
+      "isOptional": false,
+      "title": "Two-Tier Cloud Application",
+      "uriRef": "http://decideh2020.eu/resources/patterns/two-tier-cloud-application",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/basic"
+      ],
+      "selected": false
+    },
+    {
+      "isOptional": false,
+      "title": "Loose Coupling",
+      "uriRef": "http://decideh2020.eu/resources/patterns/loose-coupling",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/basic"
+      ],
+      "selected": true
+    },
+    {
+      "isOptional": false,
+      "title": "Distributed Application",
+      "uriRef": "http://decideh2020.eu/resources/patterns/distributed-application",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/basic"
+      ],
+      "selected": true
+    },
+    {
+      "isOptional": false,
+      "title": "Three-Tier Cloud Application",
+      "uriRef": "http://decideh2020.eu/resources/patterns/three-tier-cloud-application",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/basic"
+      ],
+      "selected": false
+    },
+    {
+      "isOptional": false,
+      "title": "Managed Configuration",
+      "uriRef": "http://decideh2020.eu/resources/patterns/managed-configuration",
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/basic"
+      ],
+      "selected": false
+    }
+  ],
+  "schema": [
+    {
+      "microservices": [
+        "1fc92915-fe58-44d3-8061-65e9757fd082"
+      ],
+      "csId": "48",
+      "vmId": 0
+    },
+    {
+      "microservices": [
+        "be0ca3ef-c261-443f-a66c-8790aad81721"
+      ],
+      "csId": "48",
+      "vmId": 1
+    },
+    {
+      "microservices": [
+        "66296311-5512-4142-8eca-b464ad7ca1a2"
+      ],
+      "csId": "22",
+      "vmId": 2
+    }
+  ],
+  "monitoring": {
+    "status": true
   },
-  "consulJoinIp" : "82.223.81.97"
+  "consulJoinIp": "82.223.81.97"
 }
