@@ -798,22 +798,8 @@
       "microservices": [
         "1fc92915-fe58-44d3-8061-65e9757fd082"
       ],
-      "csId": "48",
+      "csId": "13",
       "vmId": 0
-    },
-    {
-      "microservices": [
-        "be0ca3ef-c261-443f-a66c-8790aad81721"
-      ],
-      "csId": "48",
-      "vmId": 1
-    },
-    {
-      "microservices": [
-        "66296311-5512-4142-8eca-b464ad7ca1a2"
-      ],
-      "csId": "22",
-      "vmId": 2
     }
   ],
   "monitoring": {
