@@ -1203,12 +1203,12 @@
       "vmId": 1
     },
     {
-      "csId": "15",
-      "vmId": 1
+      "csId": "17",
+      "vmId": 2
     },
     {
       "csId": "13",
-      "vmId": 1
+      "vmId": 3
     }
   ],
   "virtualMachines": [
