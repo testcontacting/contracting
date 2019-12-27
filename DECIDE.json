@@ -1,10 +1,9 @@
 {
-  "id": "87834a87-1d15-4cea-946f-314866f9d1f8",
-  "name": "ArsysTest",
-  "description": "ArsysTest2",
+  "id": "7c1b0add-0141-4955-a398-bd5644940263",
+  "name": "SockshopBerlin",
+  "description": "An app",
   "version": "0.2.2-alpha",
   "highTechnologicalRisk": false,
-  "preferredProvider": "Amazon",
   "nfrs": [
     {
       "type": "Availability",
@@ -12,84 +11,23 @@
         "Application"
       ],
       "abstractValue": "Medium",
-      "value": 98.0,
+      "value": 34.0,
       "unit": "percentage"
     },
     {
-      "type": "Performance",
+      "type": "Scalability",
       "tags": [
         "Application"
       ],
       "abstractValue": "High",
-      "value": 100.0,
-      "unit": "millisecond"
-    },
-    {
-      "type": "Location",
-      "tags": [
-        "Application"
-      ],
-      "abstractValue": "Single Location",
-      "value": {
-        "region": "Europe",
-        "zone": "Spain"
-      }
+      "value": 99,
+      "unit": "request/sec"
     }
   ],
   "microservices": [
     {
-      "id": "1fc92915-fe58-44d3-8061-65e9757fd082",
-      "name": "notif-web",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Angular",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "safeMethods": [
-        {
-          "port": "80",
-          "path": "/notif-web"
-        }
-      ],
-      "detachableResources": [
-        {
-          "id": "582b4d8b-8489-45ca-8cc8-127539d729f5",
-          "name": "none",
-          "db": false,
-          "classification": "storage"
-        }
-      ]
-    },
-    {
-      "id": "be0ca3ef-c261-443f-a66c-8790aad81721",
-      "name": "notif-ddbb",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "MySQL",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "detachableResources": [
-        {
-          "id": "4ad9a28c-7e1b-4d2d-bfff-dd02752f2147",
-          "name": "none",
-          "db": false,
-          "classification": "storage"
-        }
-      ]
-    },
-    {
-      "id": "66296311-5512-4142-8eca-b464ad7ca1a2",
-      "name": "notif-mail",
+      "id": "2b7f561e-2888-49d1-b8f7-f99e34c0667f",
+      "name": "Frontend",
       "classification": "Computing",
       "stateful": false,
       "programmingLanguage": "Java",
@@ -102,64 +40,333 @@
       ],
       "detachableResources": [
         {
-          "id": "1acffcb5-3079-4d59-876a-e90d48d942c2",
+          "id": "721b1349-ed2d-40a2-b7d9-880b5f4a7b57",
           "name": "none",
           "db": false,
           "classification": "storage"
         }
-      ]
+      ],
+      "infrastructureRequirements": {
+        "minDisk": 100,
+        "maxDisk": 100,
+        "minRam": 4,
+        "maxRam": 4
+      }
+    },
+    {
+      "id": "8d44eb2e-dedc-4fa3-8a25-3082a156d670",
+      "name": "catalogue",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "Go",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "detachableResources": [
+        {
+          "id": "eac32614-18c6-48c9-83ea-903bb93e33d0",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ],
+      "infrastructureRequirements": {
+        "minDisk": 100,
+        "maxDisk": 100,
+        "minRam": 4,
+        "maxRam": 4
+      }
+    },
+    {
+      "id": "beb1a2e8-addb-4d51-8385-c11190d2b310",
+      "name": "carts",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "Java",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "detachableResources": [
+        {
+          "id": "55e8d155-6ec6-483c-acca-57297443aec8",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ],
+      "infrastructureRequirements": {
+        "minDisk": 200,
+        "maxDisk": 200,
+        "minRam": 4,
+        "maxRam": 4
+      }
+    },
+    {
+      "id": "fe44f57f-9a98-44ec-8d92-555b85ea7f43",
+      "name": "orders",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "Java",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "detachableResources": [
+        {
+          "id": "f44615da-8ac5-4239-9037-094a75fd3c9b",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ],
+      "infrastructureRequirements": {
+        "minDisk": 100,
+        "maxDisk": 100,
+        "minRam": 4,
+        "maxRam": 4
+      }
+    },
+    {
+      "id": "7eb46a47-3e98-4d18-895b-28667b95334a",
+      "name": "payment",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "Go",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "detachableResources": [
+        {
+          "id": "31fea166-61b6-47b3-a66b-bf76ae7d8161",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ],
+      "infrastructureRequirements": {
+        "minDisk": 100,
+        "maxDisk": 100,
+        "minRam": 2,
+        "maxRam": 2
+      }
+    },
+    {
+      "id": "eb43e6db-09cc-4494-9fbd-8ff82891a332",
+      "name": "queue-master",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "Java",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "detachableResources": [
+        {
+          "id": "cdf37f56-0e63-4ebd-998a-ae2d222bdc46",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ],
+      "infrastructureRequirements": {
+        "minDisk": 100,
+        "maxDisk": 100,
+        "minRam": 2,
+        "maxRam": 2
+      }
+    },
+    {
+      "id": "d4edf023-2084-400c-9398-f4cf84642b6d",
+      "name": "shipping",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "Java",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "detachableResources": [
+        {
+          "id": "306807f5-0591-407b-aa34-e08fc645747f",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ],
+      "infrastructureRequirements": {
+        "minDisk": 100,
+        "maxDisk": 100,
+        "minRam": 4,
+        "maxRam": 4
+      }
+    },
+    {
+      "id": "e5ff462c-c075-44c2-94fb-0ca713192d1b",
+      "name": "user",
+      "classification": "Computing",
+      "stateful": false,
+      "programmingLanguage": "Go",
+      "tags": [
+        "Application"
+      ],
+      "publicIP": false,
+      "endpoints": [
+        ""
+      ],
+      "detachableResources": [
+        {
+          "id": "a0be5c8e-61a6-431b-8db7-429a2dd5549b",
+          "name": "none",
+          "db": false,
+          "classification": "storage"
+        }
+      ],
+      "infrastructureRequirements": {
+        "minDisk": 100,
+        "maxDisk": 100,
+        "minRam": 2,
+        "maxRam": 2
+      }
     }
   ],
   "mcsla": {
     "sla": {
-      "description": "ArsysTest Service Level Agreement",
+      "description": "SockshopBerlin Service Level Agreement",
+      "visibility": "false",
       "objectives": [
         {
-          "termName": "Performance",
+          "termName": "Availability",
           "type": "slo",
-          "value": "98.0",
-          "unit": "millisecond",
-          "conditionStatement": "lessOrEqual",
+          "value": "34.0",
+          "unit": "percentage",
+          "conditionStatement": "greaterOrEqual",
           "metrics": [
             {
-              "id": "CSA_PE_001",
-              "descriptor": "Maximum response time for a request",
+              "id": "CSA_AV_001",
+              "descriptor": "Aggregation of microservices",
               "scale": "ratio",
               "expression": {
-                "expression": "AGGREGATION_MAXTYPE",
+                "expression": "AVAILABILITY_AGGREGATION_SUMTYPE",
                 "expressionLanguage": "predefined",
-                "note": "max(term<1>, ...term<n>)",
-                "unit": "millisecond"
+                "note": "availability(term<1>, ...term<n>) = 100% - (sum<i=1..n>(100% - term<i>))",
+                "unit": "percentage"
               },
               "underlyingMetrics": [
                 {
-                  "id": "1fc92915-fe58-44d3-8061-65e9757fd082",
+                  "id": "2b7f561e-2888-49d1-b8f7-f99e34c0667f",
+                  "descriptor": "Availability based on meantime between failure and meantime between recovery",
                   "scale": "ratio",
-                  "note": "notif-web",
+                  "note": "Frontend",
                   "expression": {
-                    "expression": "EMPTY",
+                    "expression": "AVAILABILITY_MTBFMTTR",
                     "expressionLanguage": "predefined",
-                    "unit": "millisecond"
+                    "note": "100 * (MTBF/(MTBF + MTTR))",
+                    "unit": "percentage"
                   }
                 },
                 {
-                  "id": "be0ca3ef-c261-443f-a66c-8790aad81721",
+                  "id": "8d44eb2e-dedc-4fa3-8a25-3082a156d670",
+                  "descriptor": "Availability based on meantime between failure and meantime between recovery",
                   "scale": "ratio",
-                  "note": "notif-ddbb",
+                  "note": "catalogue",
                   "expression": {
-                    "expression": "EMPTY",
+                    "expression": "AVAILABILITY_MTBFMTTR",
                     "expressionLanguage": "predefined",
-                    "unit": "millisecond"
+                    "note": "100 * (MTBF/(MTBF + MTTR))",
+                    "unit": "percentage"
                   }
                 },
                 {
-                  "id": "66296311-5512-4142-8eca-b464ad7ca1a2",
+                  "id": "beb1a2e8-addb-4d51-8385-c11190d2b310",
+                  "descriptor": "Availability based on meantime between failure and meantime between recovery",
                   "scale": "ratio",
-                  "note": "notif-mail",
+                  "note": "carts",
                   "expression": {
-                    "expression": "EMPTY",
+                    "expression": "AVAILABILITY_MTBFMTTR",
                     "expressionLanguage": "predefined",
-                    "unit": "millisecond"
+                    "note": "100 * (MTBF/(MTBF + MTTR))",
+                    "unit": "percentage"
+                  }
+                },
+                {
+                  "id": "fe44f57f-9a98-44ec-8d92-555b85ea7f43",
+                  "descriptor": "Availability based on meantime between failure and meantime between recovery",
+                  "scale": "ratio",
+                  "note": "orders",
+                  "expression": {
+                    "expression": "AVAILABILITY_MTBFMTTR",
+                    "expressionLanguage": "predefined",
+                    "note": "100 * (MTBF/(MTBF + MTTR))",
+                    "unit": "percentage"
+                  }
+                },
+                {
+                  "id": "7eb46a47-3e98-4d18-895b-28667b95334a",
+                  "descriptor": "Availability based on meantime between failure and meantime between recovery",
+                  "scale": "ratio",
+                  "note": "payment",
+                  "expression": {
+                    "expression": "AVAILABILITY_MTBFMTTR",
+                    "expressionLanguage": "predefined",
+                    "note": "100 * (MTBF/(MTBF + MTTR))",
+                    "unit": "percentage"
+                  }
+                },
+                {
+                  "id": "eb43e6db-09cc-4494-9fbd-8ff82891a332",
+                  "descriptor": "Availability based on meantime between failure and meantime between recovery",
+                  "scale": "ratio",
+                  "note": "queue-master",
+                  "expression": {
+                    "expression": "AVAILABILITY_MTBFMTTR",
+                    "expressionLanguage": "predefined",
+                    "note": "100 * (MTBF/(MTBF + MTTR))",
+                    "unit": "percentage"
+                  }
+                },
+                {
+                  "id": "d4edf023-2084-400c-9398-f4cf84642b6d",
+                  "descriptor": "Availability based on meantime between failure and meantime between recovery",
+                  "scale": "ratio",
+                  "note": "shipping",
+                  "expression": {
+                    "expression": "AVAILABILITY_MTBFMTTR",
+                    "expressionLanguage": "predefined",
+                    "note": "100 * (MTBF/(MTBF + MTTR))",
+                    "unit": "percentage"
+                  }
+                },
+                {
+                  "id": "e5ff462c-c075-44c2-94fb-0ca713192d1b",
+                  "descriptor": "Availability based on meantime between failure and meantime between recovery",
+                  "scale": "ratio",
+                  "note": "user",
+                  "expression": {
+                    "expression": "AVAILABILITY_MTBFMTTR",
+                    "expressionLanguage": "predefined",
+                    "note": "100 * (MTBF/(MTBF + MTTR))",
+                    "unit": "percentage"
                   }
                 }
               ]
@@ -167,62 +374,259 @@
           ]
         },
         {
-          "termName": "Performance",
-          "type": "slo",
-          "value": "100.0",
-          "unit": "millisecond",
-          "conditionStatement": "lessOrEqual",
-          "metrics": [
-            {
-              "id": "CSA_PE_001",
-              "descriptor": "Maximum response time for a request",
-              "scale": "ratio",
-              "expression": {
-                "expression": "AGGREGATION_MAXTYPE",
-                "expressionLanguage": "predefined",
-                "note": "max(term<1>, ...term<n>)",
-                "unit": "millisecond"
-              },
-              "underlyingMetrics": [
-                {
-                  "id": "1fc92915-fe58-44d3-8061-65e9757fd082",
-                  "scale": "ratio",
-                  "note": "notif-web",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "be0ca3ef-c261-443f-a66c-8790aad81721",
-                  "scale": "ratio",
-                  "note": "notif-ddbb",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "66296311-5512-4142-8eca-b464ad7ca1a2",
-                  "scale": "ratio",
-                  "note": "notif-mail",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                }
-              ]
-            }
-          ]
+          "termName": "Scalability",
+          "type": "sqo",
+          "value": "99",
+          "conditionStatement": "equal"
         }
       ]
     },
     "csSlas": {
-      "22": {
-        "description": "r4.xlarge",
+      "3": {
+        "description": "C2_Europe",
+        "coveredServices": [
+          "Virtual Machine"
+        ],
+        "objectives": [
+          {
+            "termName": "Region",
+            "type": "sqo",
+            "value": "Europe",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Zone",
+            "type": "sqo",
+            "value": "Germany",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Provider",
+            "type": "sqo",
+            "value": "Arsys",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Availability",
+            "type": "slo",
+            "value": "99.6",
+            "unit": "percentage",
+            "conditionStatement": "greaterOrEqual",
+            "metrics": [
+              {
+                "id": "CS_3_001",
+                "descriptor": "Uptime during a specific time period",
+                "scale": "ratio",
+                "expression": {
+                  "expression": "AVAILABILITY_UPTIME_BC",
+                  "expressionLanguage": "predefined",
+                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
+                  "unit": "percentage"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Response time: Virtual Machine Performance",
+            "termName": "Performance",
+            "type": "slo",
+            "value": "3",
+            "unit": "millisecond",
+            "conditionStatement": "lessOrEqual",
+            "metrics": [
+              {
+                "id": "CS_3_001",
+                "descriptor": "Response time for a request",
+                "scale": "interval",
+                "expression": {
+                  "expression": "EMPTY",
+                  "expressionLanguage": "predefined",
+                  "note": "delta(t)",
+                  "unit": "millisecond"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Legal Level/Accreditations",
+            "termName": "Legal Level",
+            "type": "sqo",
+            "value": "Legal Level 2",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Cost",
+            "type": "slo",
+            "value": "40",
+            "unit": "euro",
+            "conditionStatement": "less"
+          }
+        ]
+      },
+      "4": {
+        "description": "C2_UnitedKingdom",
+        "coveredServices": [
+          "Virtual Machine"
+        ],
+        "objectives": [
+          {
+            "termName": "Region",
+            "type": "sqo",
+            "value": "Europe",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Zone",
+            "type": "sqo",
+            "value": "United Kingdom",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Provider",
+            "type": "sqo",
+            "value": "Arsys",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Availability",
+            "type": "slo",
+            "value": "99.6",
+            "unit": "percentage",
+            "conditionStatement": "greaterOrEqual",
+            "metrics": [
+              {
+                "id": "CS_4_001",
+                "descriptor": "Uptime during a specific time period",
+                "scale": "ratio",
+                "expression": {
+                  "expression": "AVAILABILITY_UPTIME_BC",
+                  "expressionLanguage": "predefined",
+                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
+                  "unit": "percentage"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Response time: Virtual Machine Performance",
+            "termName": "Performance",
+            "type": "slo",
+            "value": "3",
+            "unit": "millisecond",
+            "conditionStatement": "lessOrEqual",
+            "metrics": [
+              {
+                "id": "CS_4_001",
+                "descriptor": "Response time for a request",
+                "scale": "interval",
+                "expression": {
+                  "expression": "EMPTY",
+                  "expressionLanguage": "predefined",
+                  "note": "delta(t)",
+                  "unit": "millisecond"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Legal Level/Accreditations",
+            "termName": "Legal Level",
+            "type": "sqo",
+            "value": "Legal Level 2",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Cost",
+            "type": "slo",
+            "value": "40",
+            "unit": "euro",
+            "conditionStatement": "less"
+          }
+        ]
+      },
+      "13": {
+        "description": "t2.nano",
+        "coveredServices": [
+          "Virtual Machine"
+        ],
+        "objectives": [
+          {
+            "termName": "Region",
+            "type": "sqo",
+            "value": "Europe",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Zone",
+            "type": "sqo",
+            "value": "Ireland",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Provider",
+            "type": "sqo",
+            "value": "Amazon",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Availability",
+            "type": "slo",
+            "value": "98",
+            "unit": "percentage",
+            "conditionStatement": "greaterOrEqual",
+            "metrics": [
+              {
+                "id": "CS_13_001",
+                "descriptor": "Uptime during a specific time period",
+                "scale": "ratio",
+                "expression": {
+                  "expression": "AVAILABILITY_UPTIME_BC",
+                  "expressionLanguage": "predefined",
+                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
+                  "unit": "percentage"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Response time: Virtual Machine Performance",
+            "termName": "Performance",
+            "type": "slo",
+            "value": "3",
+            "unit": "millisecond",
+            "conditionStatement": "lessOrEqual",
+            "metrics": [
+              {
+                "id": "CS_13_001",
+                "descriptor": "Response time for a request",
+                "scale": "interval",
+                "expression": {
+                  "expression": "EMPTY",
+                  "expressionLanguage": "predefined",
+                  "note": "delta(t)",
+                  "unit": "millisecond"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Legal Level/Accreditations",
+            "termName": "Legal Level",
+            "type": "sqo",
+            "value": "Legal Level 1",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Cost",
+            "type": "slo",
+            "value": "4.53",
+            "unit": "euro",
+            "conditionStatement": "less"
+          }
+        ]
+      },
+      "15": {
+        "description": "m5.large",
         "coveredServices": [
           "Virtual Machine"
         ],
@@ -236,13 +640,13 @@
           {
             "termName": "Zone",
             "type": "sqo",
-            "value": "United States",
+            "value": "Canada",
             "conditionStatement": "equal"
           },
           {
             "termName": "Provider",
             "type": "sqo",
-            "value": "Amazon",
+            "value": "Arsys",
             "conditionStatement": "equal"
           },
           {
@@ -253,7 +657,88 @@
             "conditionStatement": "greaterOrEqual",
             "metrics": [
               {
-                "id": "CS_22_001",
+                "id": "CS_15_001",
+                "descriptor": "Uptime during a specific time period",
+                "scale": "ratio",
+                "expression": {
+                  "expression": "AVAILABILITY_UPTIME_BC",
+                  "expressionLanguage": "predefined",
+                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
+                  "unit": "percentage"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Response time: Virtual Machine Performance",
+            "termName": "Performance",
+            "type": "slo",
+            "value": "1",
+            "unit": "millisecond",
+            "conditionStatement": "lessOrEqual",
+            "metrics": [
+              {
+                "id": "CS_15_001",
+                "descriptor": "Response time for a request",
+                "scale": "interval",
+                "expression": {
+                  "expression": "EMPTY",
+                  "expressionLanguage": "predefined",
+                  "note": "delta(t)",
+                  "unit": "millisecond"
+                }
+              }
+            ]
+          },
+          {
+            "comment": "Legal Level/Accreditations",
+            "termName": "Legal Level",
+            "type": "sqo",
+            "value": "Legal Level 1",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Cost",
+            "type": "slo",
+            "value": "77",
+            "unit": "euro",
+            "conditionStatement": "less"
+          }
+        ]
+      },
+      "33": {
+        "description": "B8_Germany",
+        "coveredServices": [
+          "Virtual Machine"
+        ],
+        "objectives": [
+          {
+            "termName": "Region",
+            "type": "sqo",
+            "value": "Europe",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Zone",
+            "type": "sqo",
+            "value": "Germany",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Provider",
+            "type": "sqo",
+            "value": "Azure",
+            "conditionStatement": "equal"
+          },
+          {
+            "termName": "Availability",
+            "type": "slo",
+            "value": "98",
+            "unit": "percentage",
+            "conditionStatement": "greaterOrEqual",
+            "metrics": [
+              {
+                "id": "CS_33_001",
                 "descriptor": "Uptime during a specific time period",
                 "scale": "ratio",
                 "expression": {
@@ -274,7 +759,7 @@
             "conditionStatement": "lessOrEqual",
             "metrics": [
               {
-                "id": "CS_22_001",
+                "id": "CS_33_001",
                 "descriptor": "Response time for a request",
                 "scale": "interval",
                 "expression": {
@@ -287,15 +772,18 @@
             ]
           },
           {
-            "termName": "Cost",
-            "type": "slo",
-            "value": "214",
-            "unit": "euro",
-            "conditionStatement": "less"
+            "comment": "Legal Level/Accreditations",
+            "termName": "Legal Level",
+            "type": "sqo",
+            "value": "Legal Level 2",
+            "conditionStatement": "equal"
           },
           {
-            "termName": "Smart contracting",
-            "value": "YES"
+            "termName": "Cost",
+            "type": "slo",
+            "value": "170",
+            "unit": "euro",
+            "conditionStatement": "less"
           }
         ]
       },
@@ -365,378 +853,187 @@
             ]
           },
           {
+            "comment": "Legal Level/Accreditations",
+            "termName": "Legal Level",
+            "type": "sqo",
+            "value": "Legal Level 3",
+            "conditionStatement": "equal"
+          },
+          {
             "termName": "Cost",
             "type": "slo",
             "value": "200",
             "unit": "euro",
             "conditionStatement": "less"
-          },
-          {
-            "termName": "Smart contracting",
-            "value": "YES"
           }
         ]
       }
     }
   },
-  "containers": [
-    {
-      "containerName": "notif-web",
-      "imageName": "notif-web",
-      "imageTag": "latest",
-      "dockerPrivateRegistryIp": "82.223.67.61",
-      "dockerPrivateRegistryPort": 5000,
-      "dockerPrivateRegistryUser": "saguado",
-      "dockerPrivateRegistryPassword": "M0r0s3t3",
-      "hostname": "notif-web",
-      "restart": "no",
-      "dockerHostNodeName": "VM0_Amazon_Ubuntu16_04",
-      "hostMapping": [
-        {
-          "referencedContainerName": "notif-ddbb",
-          "host": "cloudCTC_sql-server"
-        },
-        {
-          "referencedContainerName": "notif-mail",
-          "host": "cloudCTC_mail-server"
-        }
-      ],
-      "addConsulService": 1,
-      "consulServicePort": 8080,
-      "portMapping": [
-        {
-          "hostPort": "8080",
-          "containerPort": "8080"
-        },
-        {
-          "hostPort": "80",
-          "containerPort": "80"
-        },
-        {
-          "hostPort": "443",
-          "containerPort": "443"
-        }
-      ]
-    },
-    {
-      "containerName": "notif-ddbb",
-      "imageName": "notif-ddbb",
-      "imageTag": "latest",
-      "dockerPrivateRegistryIp": "82.223.67.61",
-      "dockerPrivateRegistryPort": 5000,
-      "dockerPrivateRegistryUser": "saguado",
-      "dockerPrivateRegistryPassword": "M0r0s3t3",
-      "hostname": "notif-ddbb",
-      "restart": "no",
-      "dockerHostNodeName": "VM1_Amazon_Ubuntu16_04",
-      "hostMapping": [
-        {
-          "referencedContainerName": "notif-web",
-          "host": "cloudCTC_web-server"
-        },
-        {
-          "referencedContainerName": "notif-mail",
-          "host": "cloudCTC_mail-server"
-        }
-      ],
-      "addConsulService": 1,
-      "consulServicePort": 8080,
-      "portMapping": [
-        {
-          "hostPort": "8080",
-          "containerPort": "8080"
-        },
-        {
-          "hostPort": "1433",
-          "containerPort": "1433"
-        }
-      ]
-    },
-    {
-      "containerName": "notif-mail",
-      "imageName": "notif-mail",
-      "imageTag": "latest",
-      "dockerPrivateRegistryIp": "82.223.67.61",
-      "dockerPrivateRegistryPort": 5000,
-      "dockerPrivateRegistryUser": "saguado",
-      "dockerPrivateRegistryPassword": "M0r0s3t3",
-      "hostname": "notif-mail",
-      "restart": "no",
-      "dockerHostNodeName": "VM2_Amazon_Ubuntu16_04",
-      "hostMapping": [
-        {
-          "referencedContainerName": "notif-ddbb",
-          "host": "cloudCTC_sql-server"
-        },
-        {
-          "referencedContainerName": "notif-web",
-          "host": "cloudCTC_web-server"
-        }
-      ],
-      "addConsulService": 1,
-      "consulServicePort": 8080,
-      "portMapping": [
-        {
-          "hostPort": "8080",
-          "containerPort": "8080"
-        },
-        {
-          "hostPort": "587",
-          "containerPort": "587"
-        }
-      ]
-    }
-  ],
-  "virtualMachines": [
-    {
-      "vmId": "0",
-      "csId": "48",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "77551860-4db9-4260-9164-96e0996116cd",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    },
-    {
-      "vmId": "1",
-      "csId": "48",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "77551860-4db9-4260-9164-96e0996116cd",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    },
-    {
-      "vmId": "2",
-      "csId": "22",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "77551860-4db9-4260-9164-96e0996116cd",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    }
-  ],
   "recommendedPatterns": [
     {
       "isOptional": false,
-      "title": "Dynamic Data Normalization",
-      "uriRef": "http://decideh2020.eu/resources/patterns/dynamic-data-normalization",
+      "title": "Resiliency Management Process",
+      "uriRef": "http://decideh2020.eu/resources/patterns/resiliency-management-process",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/availability"
+      ],
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/optimization"
       ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Elasticity Manager",
-      "uriRef": "http://decideh2020.eu/resources/patterns/elasticity-manager",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/scalability"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Micro Scatter-Gather",
-      "uriRef": "http://decideh2020.eu/resources/patterns/micro-scatter-gather",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
+      "selected": false
     },
     {
       "isOptional": false,
       "title": "Elastic Load Balancer",
       "uriRef": "http://decideh2020.eu/resources/patterns/elastic-load-balancer",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/performance",
+        "http://decideh2020.eu/resources/patterns/availability"
+      ],
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/optimization"
       ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/availability"
-        }
-      ]
+      "selected": true
     },
     {
       "isOptional": false,
-      "title": "Direct I/O Access",
-      "uriRef": "http://decideh2020.eu/resources/patterns/direct-io-access",
+      "title": "Provider Adapter",
+      "uriRef": "http://decideh2020.eu/resources/patterns/provider-adapter",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/availability"
+      ],
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/optimization"
       ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
+      "selected": false
     },
     {
       "isOptional": false,
-      "title": "Content Distribution Network",
-      "uriRef": "http://decideh2020.eu/resources/patterns/content-distribution-network",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/deployment"
+      "title": "User Interface Component",
+      "uriRef": "http://decideh2020.eu/resources/patterns/user-interface-component",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/availability"
       ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Throttling",
-      "uriRef": "http://decideh2020.eu/resources/patterns/throttling",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/availability"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Service State Management",
-      "uriRef": "http://decideh2020.eu/resources/patterns/service-state-management",
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/development"
       ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
+      "selected": true
     },
     {
       "isOptional": false,
-      "title": "Cloud Storage Device Performance Enforcement",
-      "uriRef": "http://decideh2020.eu/resources/patterns/cloud-storage-device-performance-enforcement",
+      "title": "Hybrid Backend",
+      "uriRef": "http://decideh2020.eu/resources/patterns/hybrid-backend",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/scalability"
+      ],
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/deployment",
+        "http://decideh2020.eu/resources/patterncategories/development"
+      ],
+      "selected": false
+    },
+    {
+      "isOptional": false,
+      "title": "Stateless Component",
+      "uriRef": "http://decideh2020.eu/resources/patterns/stateless-component",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/scalability"
+      ],
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/development"
       ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
+      "selected": false
     },
     {
       "isOptional": false,
       "title": "Elastic Queue",
       "uriRef": "http://decideh2020.eu/resources/patterns/elastic-queue",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/scalability",
+        "http://decideh2020.eu/resources/patterns/performance"
+      ],
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/optimization"
       ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/scalability"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
+      "selected": false
     },
     {
       "isOptional": false,
-      "title": "Direct LUN Access",
-      "uriRef": "http://decideh2020.eu/resources/patterns/direct-lun-access",
+      "title": "Hybrid Backup",
+      "uriRef": "http://decideh2020.eu/resources/patterns/hybrid-backup",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/scalability"
+      ],
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/development",
+        "http://decideh2020.eu/resources/patterncategories/deployment"
+      ],
+      "selected": false
+    },
+    {
+      "isOptional": false,
+      "title": "Elasticity Manager",
+      "uriRef": "http://decideh2020.eu/resources/patterns/elasticity-manager",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/scalability",
+        "http://decideh2020.eu/resources/patterns/performance"
+      ],
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/optimization"
       ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
+      "selected": false
     },
     {
       "isOptional": false,
-      "title": "Usage Monitoring",
-      "uriRef": "http://decideh2020.eu/resources/patterns/usage-monitoring",
+      "title": "Hybrid User Interface",
+      "uriRef": "http://decideh2020.eu/resources/patterns/hybrid-user-interface",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/scalability"
+      ],
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/development",
+        "http://decideh2020.eu/resources/patterncategories/deployment"
+      ],
+      "selected": false
+    },
+    {
+      "isOptional": false,
+      "title": "Hybrid Processing",
+      "uriRef": "http://decideh2020.eu/resources/patterns/hybrid-processing",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/scalability"
+      ],
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/development",
+        "http://decideh2020.eu/resources/patterncategories/deployment"
+      ],
+      "selected": true
+    },
+    {
+      "isOptional": false,
+      "title": "Hybrid Data",
+      "uriRef": "http://decideh2020.eu/resources/patterns/hybrid-data",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/scalability"
+      ],
+      "categories": [
+        "http://decideh2020.eu/resources/patterncategories/development",
+        "http://decideh2020.eu/resources/patterncategories/deployment"
+      ],
+      "selected": false
+    },
+    {
+      "isOptional": false,
+      "title": "Processing Component",
+      "uriRef": "http://decideh2020.eu/resources/patterns/processing-component",
+      "positiveImpacts": [
+        "http://decideh2020.eu/resources/patterns/scalability"
+      ],
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/development"
       ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/availability"
-        }
-      ]
+      "selected": false
     },
     {
       "isOptional": false,
@@ -745,7 +1042,18 @@
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/basic"
       ],
-      "selected": false
+      "selected": false,
+      "license": "http://decideh2020.eu/resources/patterns/unknown/propriatary",
+      "solution": "Package the service as a (Docker) container image and deploy each service instance as a container",
+      "subject": "How are services packaged and deployed?",
+      "icon": "service_registry.png",
+      "context": "You have applied the Microservice architecture pattern and architected your system as a set of services. Each service is deployed as a set of service instances for throughput and availability.",
+      "description": "Implement a service registry, which is a database of services, their instances and their locations. Service instances are registered with the service registry on start-up and deregistered on shutdown. Client of the service and/or routers query the service registry to find the available instances of a service. A service registry might invoke a service instance�s health check API to verify that it is able to handle requests.",
+      "model": "service_registry.png",
+      "page": {
+        "topic": "Service Registry",
+        "primaryTopic": "http://microservices.io/patterns/deployment/service-per-container.html"
+      }
     },
     {
       "isOptional": false,
@@ -754,7 +1062,29 @@
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/basic"
       ],
-      "selected": false
+      "selected": false,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "solution": "The cloud application's functionality is decomposed into data handling, stateful components, accompanied by one or several storage offerings, and stateless components handling presentation and business logic. This separation enables the two tiers to elastically and independently adapt to their workload.",
+      "subject": "Why separate a cloud application into stateful (data handling) and stateless components?",
+      "icon": "two_tier_cloud_application.png",
+      "context": "A Distributed Application is composed of multiple application components independently scalable. Data handling or stateful functionality is significantly harder to scale than stateless components, since stateful components have to provide state information between instances. Therefore, a cloud application should be composed of easy-to-scale, stateless and hard-to-scale, stateful components.",
+      "description": "Presentation and business logic is bundled into one stateless tier that is easy to scale independently. This tier is separated from the data tier that is harder to scale and often handled by a provider-supplied storage offering.",
+      "model": "two_tier_cloud_application.png",
+      "page": {
+        "topic": "Two-Tier Cloud Application",
+        "primaryTopic": "http://www.cloudcomputingpatterns.org/two_tier_cloud_application/"
+      },
+      "relations": [
+        "http://decideh2020.eu/resources/patterns/content-distribution-network",
+        "http://decideh2020.eu/resources/patterns/hybrid-development-environment",
+        "http://decideh2020.eu/resources/patterns/stateful-components",
+        "http://decideh2020.eu/resources/patterns/stateless-component",
+        "http://decideh2020.eu/resources/patterns/hybrid-data",
+        "http://decideh2020.eu/resources/patterns/distributed-application",
+        "http://decideh2020.eu/resources/patterns/three-tier-cloud-application",
+        "http://decideh2020.eu/resources/patterns/hybrid-application-functions",
+        "http://decideh2020.eu/resources/patterns/hybrid-backup"
+      ]
     },
     {
       "isOptional": false,
@@ -763,7 +1093,26 @@
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/basic"
       ],
-      "selected": true
+      "selected": false,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "solution": "Communicating components and multiple integrated applications are decoupled from each other by interacting through a broker. This broker encapsulates the assumptions that communication partners would otherwise have to make about one other and, thus, ensures separation of concerns.",
+      "subject": "How can dependencies between Distributed Applications and between individual components of these applications be reduced?",
+      "icon": "loose_coupling.png",
+      "context": "Information exchange between applications and their individual components as well as associated management tasks, such as scaling, failure handling, or update management can be simplified significantly if application components can be treated individually and the dependencies among them are kept to a minimum.",
+      "description": "Information exchange between applications and their individual components as well as associated management tasks, such as scaling, failure handling, or update management can be simplified significantly if application components can be treated individually and the dependencies among them are kept to a minimum.",
+      "model": "loose_coupling.png",
+      "page": {
+        "topic": "Loose Coupling Pattern",
+        "primaryTopic": "http://www.cloudcomputingpatterns.org/loose_coupling/"
+      },
+      "relations": [
+        "http://decideh2020.eu/resources/patterns/hypervisor",
+        "http://decideh2020.eu/resources/patterns/watchdog",
+        "http://decideh2020.eu/resources/patterns/distributed-application",
+        "http://decideh2020.eu/resources/patterns/message-oriented-middleware",
+        "http://decideh2020.eu/resources/patterns/two-tier-cloud-application",
+        "http://decideh2020.eu/resources/patterns/eventual-consistency"
+      ]
     },
     {
       "isOptional": false,
@@ -772,7 +1121,22 @@
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/basic"
       ],
-      "selected": true
+      "selected": false,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "solution": "The cloud application's functionality is divided into multiple, independent components - each providing a specific function. These components can be grouped together into tiers to denote that they should be deployed together physically, i.e., on the same server, cluster, or cloud provider.",
+      "subject": "Why to decompose application functionality into multiple, independent application components?",
+      "icon": "distributed_application.png",
+      "context": "Cloud application architecture should make use of the cloud provider's distribution and scaling-out support system. The cloud application should employ multiple, possibly redundant IT resources for each component to ensure its availability.",
+      "description": "Divide application functionality among multiple application components - each can then be scaled out independently (among different cloud providers).",
+      "model": "distributed_application.png",
+      "page": {
+        "topic": "Distributed Application Pattern",
+        "primaryTopic": "http://www.cloudcomputingpatterns.org/distributed_application/"
+      },
+      "relations": [
+        "http://decideh2020.eu/resources/patterns/elastic-infrastructure",
+        "http://decideh2020.eu/resources/patterns/watchdog"
+      ]
     },
     {
       "isOptional": false,
@@ -781,7 +1145,26 @@
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/basic"
       ],
-      "selected": false
+      "selected": false,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "solution": "The application is decomposed into three tiers, where each tier can be scaled independently and elastically. The presentation tier is comprised of a load balancer and an application component that implements the Stateless Component pattern and User Interface Component pattern. The business logic tier is comprised of an application component implementing the Stateless Component pattern in addition to the Processing Component pattern.",
+      "subject": "When to decompose presentation logic, business logic, and data handling into three separate tiers that can be scaled independently?",
+      "icon": "three_tier_cloud_application.png",
+      "context": "Dividing a Distributed Application into three tiers instead of two (see Two-Tier Cloud Applications) results in a more efficient application, if there are processing components (e.g. business logic) which are more computationally intensive or are used less frequently than UI components, summarizing their implementation in one tier can be inefficient. This is the case if components experience different workloads. The number of provisioned component instances cannot be aligned well to differing workloads if they are grouped into coarse grained tiers.",
+      "description": "The presentation logic, business logic, and data handling are realized as separate tiers to handle stateless presentation and compute-intensive processing independently of the data tier, which is harder to scale and often handled by the cloud provider.",
+      "model": "three_tier_cloud_application.png",
+      "page": {
+        "topic": "Three-Tier Cloud Application",
+        "primaryTopic": "http://www.cloudcomputingpatterns.org/three_tier_cloud_application/"
+      },
+      "relations": [
+        "http://decideh2020.eu/resources/patterns/stateless-component",
+        "http://decideh2020.eu/resources/patterns/two-tier-cloud-application",
+        "http://decideh2020.eu/resources/patterns/user-interface-component",
+        "http://decideh2020.eu/resources/patterns/content-distribution-network",
+        "http://decideh2020.eu/resources/patterns/processing-component",
+        "http://decideh2020.eu/resources/patterns/hybrid-cloud-applications"
+      ]
     },
     {
       "isOptional": false,
@@ -790,20 +1173,101 @@
       "categories": [
         "http://decideh2020.eu/resources/patterncategories/basic"
       ],
-      "selected": false
+      "selected": false,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "solution": "Configurations are stored in a central Storage Offering, commonly, a Relational Database, Key-Value Storage, or Blob Storage from where it is accessed by all running component instances either by accessing the storage periodically or by sending messages to the components.",
+      "subject": "How can the configuration of scaled out application component instances be controlled in a coordinated fashion?",
+      "icon": "managed_configuration.png",
+      "context": "Application components of a Distributed Application often have configuration parameters. Storing configuration information together with the application component implementation can be unpractical as it results in more overhead in case of configuration changes. Each running instance of the application component must be updated separately. Component images stored in Elastic Infrastructures or Elastic Platforms also have to be updated upon configuration change.",
+      "description": "Scaled-out application components should use a centrally stored configuration to provide a unified behavior that can be adjusted simultaneously.",
+      "model": "managed_configuration.png",
+      "page": {
+        "topic": "Managed Configuration",
+        "primaryTopic": "http://www.cloudcomputingpatterns.org/managed_configuration/"
+      },
+      "relations": [
+        "http://decideh2020.eu/resources/patterns/elastic-load-balancer",
+        "http://decideh2020.eu/resources/patterns/elastic-queue",
+        "http://decideh2020.eu/resources/patterns/watchdog",
+        "http://decideh2020.eu/resources/patterns/provider-adapter"
+      ]
     }
   ],
   "schema": [
     {
       "microservices": [
-        "1fc92915-fe58-44d3-8061-65e9757fd082"
+        "2b7f561e-2888-49d1-b8f7-f99e34c0667f",
+        "7d44eb2e-dedc-4fa3-8a25-3082a156d672"
       ],
+      "csId": "24",
+      "vmId": 1
+    },
+    {
+      "csId": "15",
+      "vmId": 1
+    },
+    {
       "csId": "13",
-      "vmId": 0
+      "vmId": 1
     }
   ],
-  "monitoring": {
-    "status": true
-  },
-  "consulJoinIp": "82.223.81.97"
+  "virtualMachines": [
+    {
+      "vmId": "1",
+      "csId": "24",
+      "cspName": "Amazon",
+      "cspId": "AMAZ",
+      "ram": 4,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+      "keyPairId": "118ee26d-043b-4843-b53a-8db8b529253c",
+      "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
+      "dockerHostNodeName": "VM1_Amazon_Ubuntu 16_04",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+    },
+    {
+      "vmId": "1",
+      "csId": "15",
+      "cspName": "Arsys",
+      "cspId": "ARSY",
+      "ram": 2,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
+      "vmRegionId": "d112253a-951f-417a-a1f1-3a892bf35a45",
+      "instanceTypeId": "f554e8a1-29d8-48e5-bd68-c01417576628",
+      "keyPairId": "118ee26d-043b-4843-b53a-8db8b529253c",
+      "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
+      "dockerHostNodeName": "VM1_Arsys_Ubuntu 16_04",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+    },
+    {
+      "vmId": "1",
+      "csId": "13",
+      "cspName": "Amazon",
+      "cspId": "AMAZ",
+      "ram": 4,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+      "keyPairId": "118ee26d-043b-4843-b53a-8db8b529253c",
+      "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
+      "dockerHostNodeName": "VM1_Amazon_Ubuntu 16_04",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+    }
+  ]
 }
