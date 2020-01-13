@@ -1040,7 +1040,7 @@
   ],
   "virtualMachines": [
     {
-      "vmId": "0",
+      "vmId": "4",
       "csId": "17",
       "cspName": "Amazon",
       "cspId": "AMAZ",
@@ -1053,42 +1053,13 @@
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
+      "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
+      "dockerHostNodeName": "VM4_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
     {
-      "vmId": "1",
-      "csId": "19",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    },
-    {
-      "vmId": "2",
-      "csId": "20",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    },
-    {
-      "vmId": "3",
+      "vmId": "5",
       "csId": "48",
       "cspName": "Amazon",
       "cspId": "AMAZ",
@@ -1101,6 +1072,47 @@
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
+      "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
+      "dockerHostNodeName": "VM5_Amazon_Ubuntu16_04",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+    },
+    {
+      "vmId": "6",
+      "csId": "48",
+      "cspName": "Amazon",
+      "cspId": "AMAZ",
+      "ram": 4,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
+      "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
+      "dockerHostNodeName": "VM6_Amazon_Ubuntu16_04",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+    },
+    {
+      "vmId": "7",
+      "csId": "48",
+      "cspName": "Amazon",
+      "cspId": "AMAZ",
+      "ram": 4,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
+      "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
+      "dockerHostNodeName": "VM7_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     }
   ],
@@ -1360,23 +1372,38 @@
       "selected": false
     }
   ],
-  "schema" : [ {
-    "microservices" : [ "11971eed-ecbd-464c-9492-da18f3405dd0", "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b" ],
-    "csId" : "17",
-    "vmId" : 4
-  }, {
-    "microservices" : [ "99034c89-9f08-40b6-8b71-9eb1f6093f51", "b2c4d15f-1a8a-4c06-b569-eafe736dcb40" ],
-    "csId" : "48",
-    "vmId" : 5
-  }, {
-    "microservices" : [ "d5b06f60-557f-4f1f-8e8f-d7f6ebe18639" ],
-    "csId" : "48",
-    "vmId" : 6
-  }, {
-    "microservices" : [ "4511de74-a3b5-40ec-aebd-1d7abd5a8ef1" ],
-    "csId" : "48",
-    "vmId" : 7
-  } ],
+  "schema": [
+    {
+      "microservices": [
+        "11971eed-ecbd-464c-9492-da18f3405dd0",
+        "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b"
+      ],
+      "csId": "17",
+      "vmId": 4
+    },
+    {
+      "microservices": [
+        "99034c89-9f08-40b6-8b71-9eb1f6093f51",
+        "b2c4d15f-1a8a-4c06-b569-eafe736dcb40"
+      ],
+      "csId": "48",
+      "vmId": 5
+    },
+    {
+      "microservices": [
+        "d5b06f60-557f-4f1f-8e8f-d7f6ebe18639"
+      ],
+      "csId": "48",
+      "vmId": 6
+    },
+    {
+      "microservices": [
+        "4511de74-a3b5-40ec-aebd-1d7abd5a8ef1"
+      ],
+      "csId": "48",
+      "vmId": 7
+    }
+  ],
   "monitoring": {
     "status": false,
     "urls": [
