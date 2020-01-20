@@ -1053,6 +1053,8 @@
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "c7e79a29-8579-411c-80fc-f12608a444fd",
+      "dockerHostNodeName": "20 20 20 20 20 20",
+
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
     {
@@ -1085,7 +1087,8 @@
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "c7e79a29-8579-411c-80fc-f12608a444fd",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
+      "dockerHostNodeName": "20 20 20 20 20 20"
     },
     {
       "vmId": "7",
