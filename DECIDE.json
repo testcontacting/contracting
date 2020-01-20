@@ -1053,8 +1053,10 @@
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "6fa6fb94-d791-4af0-85a0-b40da1ae6958",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "openedPorts": "zopa"
+      "vmUser": "ubuntu",
+      "openedPorts": "zopa",
+      "dockerHostNodeName": "VM4_Amazon_Ubuntu16_04",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
     {
       "vmId": "5",
@@ -1070,9 +1072,10 @@
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "6fa6fb94-d791-4af0-85a0-b40da1ae6958",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com",
-      "openedPorts": "zopa2"
-
+      "vmUser": "ubuntu",
+      "openedPorts": "zopa",
+      "dockerHostNodeName": "VM5_Amazon_Ubuntu16_04",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
     {
       "vmId": "6",
@@ -1088,6 +1091,9 @@
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "6fa6fb94-d791-4af0-85a0-b40da1ae6958",
+      "vmUser": "ubuntu",
+      "openedPorts": "zopa",
+      "dockerHostNodeName": "VM6_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
     {
@@ -1104,6 +1110,9 @@
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "6fa6fb94-d791-4af0-85a0-b40da1ae6958",
+      "vmUser": "ubuntu",
+      "openedPorts": "zopa",
+      "dockerHostNodeName": "VM7_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     }
   ],
