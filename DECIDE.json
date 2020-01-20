@@ -1054,7 +1054,6 @@
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "6fa6fb94-d791-4af0-85a0-b40da1ae6958",
       "vmUser": "ubuntu",
-      "openedPorts": "",
       "dockerHostNodeName": "VM4_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
@@ -1073,7 +1072,6 @@
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "6fa6fb94-d791-4af0-85a0-b40da1ae6958",
       "vmUser": "ubuntu",
-      "openedPorts": "",
       "dockerHostNodeName": "VM5_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
@@ -1092,7 +1090,6 @@
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "6fa6fb94-d791-4af0-85a0-b40da1ae6958",
       "vmUser": "ubuntu",
-      "openedPorts": "",
       "dockerHostNodeName": "VM6_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
@@ -1111,7 +1108,6 @@
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "6fa6fb94-d791-4af0-85a0-b40da1ae6958",
       "vmUser": "ubuntu",
-      "openedPorts": "",
       "dockerHostNodeName": "VM7_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     }
