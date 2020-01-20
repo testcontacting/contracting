@@ -1073,6 +1073,7 @@
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "c7e79a29-8579-411c-80fc-f12608a444fd",
       "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
       "dockerHostNodeName": "VM5_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
@@ -1091,6 +1092,7 @@
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
       "keyPairId": "c7e79a29-8579-411c-80fc-f12608a444fd",
       "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
       "dockerHostNodeName": "VM6_Amazon_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
