@@ -1039,25 +1039,7 @@
     }
   ],
   "virtualMachines": [
-    {
-      "vmId": "4",
-      "csId": "30",
-      "cspName": "Azure",
-      "cspId": "AZUR",
-      "ram": 8,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "369f40d5-d5e8-49e8-b9fa-593811972137",
-      "vmRegionId": "81a29343-7580-4523-b670-03eeea5e9dae",
-      "instanceTypeId": "7b031b06-dc14-4017-9b7e-2ef97b32278d",
-      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
-      "vmUser": "ubuntu",
-      "openedPorts": "22,80,8000-9000,9411",
-      "dockerHostNodeName": "VM4_Microsoft_Ubuntu16_04",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    }
+  
   ],
   "recommendedPatterns": [
     {
@@ -1321,8 +1303,8 @@
         "11971eed-ecbd-464c-9492-da18f3405dd0",
         "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b"
       ],
-      "csId": "30",
-      "vmId": 4
+      "csId": "1",
+      "vmId": 0
     }
   ],
   "monitoring": {
