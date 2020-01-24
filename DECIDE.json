@@ -1039,7 +1039,25 @@
     }
   ],
   "virtualMachines": [
-  
+    {
+      "vmId": "0",
+      "csId": "1",
+      "cspName": "Arsys",
+      "cspId": "ARSY",
+      "ram": 2,
+      "cores": 2,
+      "storage": 1,
+      "image": "Ubuntu 16.04",
+      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+      "vmResourceId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
+      "vmRegionId": "d112253a-951f-417a-a1f1-3a892bf35a45",
+      "instanceTypeId": "f554e8a1-29d8-48e5-bd68-c01417576628",
+      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
+      "vmUser": "ubuntu",
+      "openedPorts": "22,80,8000-9000,9411",
+      "dockerHostNodeName": "VM0_Arsys_Ubuntu16_04",
+      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
+    }
   ],
   "recommendedPatterns": [
     {
