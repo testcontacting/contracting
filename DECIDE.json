@@ -1041,18 +1041,18 @@
   "virtualMachines": [
     {
       "vmId": "4",
-      "csId": "17",
-      "cspName": "Amazon",
-      "cspId": "AMAZ",
-      "ram": 4,
+      "csId": "30",
+      "cspName": "Azure",
+      "cspId": "AZUR",
+      "ram": 8,
       "cores": 2,
       "storage": 1,
       "image": "Ubuntu 16.04",
       "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
-      "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
-      "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
+      "vmResourceId": "369f40d5-d5e8-49e8-b9fa-593811972137",
+      "vmRegionId": "81a29343-7580-4523-b670-03eeea5e9dae",
+      "instanceTypeId": "7b031b06-dc14-4017-9b7e-2ef97b32278d",
+      "keyPairId": "a1bfa977-5fe1-4e89-b2f8-def1e113e9eb",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
     {
@@ -1068,7 +1068,7 @@
       "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
+      "keyPairId": "a1bfa977-5fe1-4e89-b2f8-def1e113e9eb",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
     {
@@ -1084,7 +1084,7 @@
       "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
+      "keyPairId": "a1bfa977-5fe1-4e89-b2f8-def1e113e9eb",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     },
     {
@@ -1100,7 +1100,7 @@
       "vmResourceId": "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
       "vmRegionId": "83dc7c1e-711c-4548-9a9e-128f9795cfed",
       "instanceTypeId": "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
-      "keyPairId": "f2058e0a-0095-4f06-a122-a011697ed6ee",
+      "keyPairId": "a1bfa977-5fe1-4e89-b2f8-def1e113e9eb",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
     }
   ],
