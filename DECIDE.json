@@ -1052,8 +1052,8 @@
       "vmResourceId": "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
       "vmRegionId": "d112253a-951f-417a-a1f1-3a892bf35a45",
       "instanceTypeId": "f554e8a1-29d8-48e5-bd68-c01417576628",
-      "keyPairId": "53c98bc9-6714-4b1b-a3a3-ec9fad416c8b",
-      "vmUser": "ubuntu",
+      "keyPairId": "a1bfa977-5fe1-4e89-b2f8-def1e113e9eb",
+      "vmUser": "root",
       "openedPorts": "22,80,8000-9000,9411",
       "dockerHostNodeName": "VM0_Arsys_Ubuntu16_04",
       "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
