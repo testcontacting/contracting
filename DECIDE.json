@@ -1,1336 +1,1366 @@
 {
-  "id": "44158714-fc9b-4487-9109-1750367674d5",
-  "name": "sockshopv9",
-  "description": "sockshopv9",
-  "version": "0.2.2-alpha",
-  "highTechnologicalRisk": false,
-  "nfrs": [
-    {
-      "type": "Performance",
-      "tags": [
-        "Application"
-      ],
-      "abstractValue": "High",
-      "value": 100.0,
-      "unit": "millisecond"
-    },
-    {
-      "type": "Location",
-      "tags": [
-        "Application"
-      ],
-      "abstractValue": "Single Location",
-      "value": {
-        "region": "Europe",
-        "zone": "Ireland"
-      }
+  "id" : "44158714-fc9b-4487-9109-1750367674d5",
+  "name" : "sockshopv17",
+  "description" : "sockshopv17",
+  "version" : "0.2.2-alpha",
+  "highTechnologicalRisk" : false,
+  "nfrs" : [ {
+    "type" : "Performance",
+    "tags" : [ "Application" ],
+    "abstractValue" : "High",
+    "value" : 100.0,
+    "unit" : "millisecond"
+  }, {
+    "type" : "Location",
+    "tags" : [ "Application" ],
+    "abstractValue" : "Single Location",
+    "value" : {
+      "region" : "Europe",
+      "zone" : "Ireland"
     }
-  ],
-  "microservices": [
-    {
-      "id": "11971eed-ecbd-464c-9492-da18f3405dd0",
-      "name": "catalogue",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Go",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    },
-    {
-      "id": "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b",
-      "name": "carts",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Java",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    },
-    {
-      "id": "99034c89-9f08-40b6-8b71-9eb1f6093f51",
-      "name": "orders",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Java",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    },
-    {
-      "id": "b2c4d15f-1a8a-4c06-b569-eafe736dcb40",
-      "name": "payment",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Go",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    },
-    {
-      "id": "d5b06f60-557f-4f1f-8e8f-d7f6ebe18639",
-      "name": "queue-master",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Java",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    },
-    {
-      "id": "4511de74-a3b5-40ec-aebd-1d7abd5a8ef1",
-      "name": "shipping",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Java",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    },
-    {
-      "id": "92be1c45-1f8f-484f-b83f-1c2359ad27a2",
-      "name": "user",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Go",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    },
-    {
-      "id": "0b7c3308-3987-42fc-997f-575a3aaea2f5",
-      "name": "front-end",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Java",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    },
-    {
-      "id": "1399c249-e194-44fd-b4c7-407c2364d8b7",
-      "name": "zipkin",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Go",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    },
-    {
-      "id": "7c096319-beb0-4449-89a8-e23c06fe75a1",
-      "name": "my-traefik",
-      "classification": "Computing",
-      "stateful": false,
-      "programmingLanguage": "Go",
-      "tags": [
-        "Application"
-      ],
-      "publicIP": false,
-      "endpoints": [
-        ""
-      ],
-      "hostMapping": [
-
-      ]
-    }
-  ],
-  "mcsla": {
-    "sla": {
-      "description": "sockshopv6 Service Level Agreement",
-      "objectives": [
-        {
-          "termName": "Performance",
-          "type": "slo",
-          "value": "100.0",
-          "unit": "millisecond",
-          "conditionStatement": "lessOrEqual",
-          "metrics": [
-            {
-              "id": "CSA_PE_001",
-              "descriptor": "Maximum response time for a request",
-              "scale": "ratio",
-              "expression": {
-                "expression": "AGGREGATION_MAXTYPE",
-                "expressionLanguage": "predefined",
-                "note": "max(term<1>, ...term<n>)",
-                "unit": "millisecond"
-              },
-              "underlyingMetrics": [
-                {
-                  "id": "11971eed-ecbd-464c-9492-da18f3405dd0",
-                  "scale": "ratio",
-                  "note": "catalogue",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b",
-                  "scale": "ratio",
-                  "note": "carts",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "99034c89-9f08-40b6-8b71-9eb1f6093f51",
-                  "scale": "ratio",
-                  "note": "orders",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "b2c4d15f-1a8a-4c06-b569-eafe736dcb40",
-                  "scale": "ratio",
-                  "note": "payment",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "d5b06f60-557f-4f1f-8e8f-d7f6ebe18639",
-                  "scale": "ratio",
-                  "note": "queue-master",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "4511de74-a3b5-40ec-aebd-1d7abd5a8ef1",
-                  "scale": "ratio",
-                  "note": "shipping",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "92be1c45-1f8f-484f-b83f-1c2359ad27a2",
-                  "scale": "ratio",
-                  "note": "user",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "0b7c3308-3987-42fc-997f-575a3aaea2f5",
-                  "scale": "ratio",
-                  "note": "front-end",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "1399c249-e194-44fd-b4c7-407c2364d8b7",
-                  "scale": "ratio",
-                  "note": "zipkin",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                },
-                {
-                  "id": "7c096319-beb0-4449-89a8-e23c06fe75a1",
-                  "scale": "ratio",
-                  "note": "my-traefik",
-                  "expression": {
-                    "expression": "EMPTY",
-                    "expressionLanguage": "predefined",
-                    "unit": "millisecond"
-                  }
-                }
-              ]
+  } ],
+  "microservices" : [ {
+    "id" : "11971eed-ecbd-464c-9492-da18f3405dd0",
+    "name" : "catalogue",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Go",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  }, {
+    "id" : "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b",
+    "name" : "carts",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Java",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  }, {
+    "id" : "99034c89-9f08-40b6-8b71-9eb1f6093f51",
+    "name" : "orders",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Java",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  }, {
+    "id" : "b2c4d15f-1a8a-4c06-b569-eafe736dcb40",
+    "name" : "payment",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Go",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  }, {
+    "id" : "d5b06f60-557f-4f1f-8e8f-d7f6ebe18639",
+    "name" : "queue-master",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Java",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  }, {
+    "id" : "4511de74-a3b5-40ec-aebd-1d7abd5a8ef1",
+    "name" : "shipping",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Java",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  }, {
+    "id" : "92be1c45-1f8f-484f-b83f-1c2359ad27a2",
+    "name" : "user",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Go",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  }, {
+    "id" : "0b7c3308-3987-42fc-997f-575a3aaea2f5",
+    "name" : "front-end",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Java",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  }, {
+    "id" : "1399c249-e194-44fd-b4c7-407c2364d8b7",
+    "name" : "zipkin",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Go",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  }, {
+    "id" : "7c096319-beb0-4449-89a8-e23c06fe75a1",
+    "name" : "my-traefik",
+    "classification" : "Computing",
+    "stateful" : false,
+    "programmingLanguage" : "Go",
+    "tags" : [ "Application" ],
+    "publicIP" : false,
+    "endpoints" : [ "" ]
+  } ],
+  "mcsla" : {
+    "sla" : {
+      "description" : "sockshopv6 Service Level Agreement",
+      "objectives" : [ {
+        "termName" : "Performance",
+        "type" : "slo",
+        "value" : "100.0",
+        "unit" : "millisecond",
+        "conditionStatement" : "lessOrEqual",
+        "metrics" : [ {
+          "id" : "CSA_PE_001",
+          "descriptor" : "Maximum response time for a request",
+          "scale" : "ratio",
+          "expression" : {
+            "expression" : "AGGREGATION_MAXTYPE",
+            "expressionLanguage" : "predefined",
+            "note" : "max(term<1>, ...term<n>)",
+            "unit" : "millisecond"
+          },
+          "underlyingMetrics" : [ {
+            "id" : "11971eed-ecbd-464c-9492-da18f3405dd0",
+            "scale" : "ratio",
+            "note" : "catalogue",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
             }
-          ]
-        },
-        {
-          "termName": "Location",
-          "type": "sqo",
-          "value": "Europe",
-          "conditionStatement": "equal"
-        }
-      ]
+          }, {
+            "id" : "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b",
+            "scale" : "ratio",
+            "note" : "carts",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
+            }
+          }, {
+            "id" : "99034c89-9f08-40b6-8b71-9eb1f6093f51",
+            "scale" : "ratio",
+            "note" : "orders",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
+            }
+          }, {
+            "id" : "b2c4d15f-1a8a-4c06-b569-eafe736dcb40",
+            "scale" : "ratio",
+            "note" : "payment",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
+            }
+          }, {
+            "id" : "d5b06f60-557f-4f1f-8e8f-d7f6ebe18639",
+            "scale" : "ratio",
+            "note" : "queue-master",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
+            }
+          }, {
+            "id" : "4511de74-a3b5-40ec-aebd-1d7abd5a8ef1",
+            "scale" : "ratio",
+            "note" : "shipping",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
+            }
+          }, {
+            "id" : "92be1c45-1f8f-484f-b83f-1c2359ad27a2",
+            "scale" : "ratio",
+            "note" : "user",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
+            }
+          }, {
+            "id" : "0b7c3308-3987-42fc-997f-575a3aaea2f5",
+            "scale" : "ratio",
+            "note" : "front-end",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
+            }
+          }, {
+            "id" : "1399c249-e194-44fd-b4c7-407c2364d8b7",
+            "scale" : "ratio",
+            "note" : "zipkin",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
+            }
+          }, {
+            "id" : "7c096319-beb0-4449-89a8-e23c06fe75a1",
+            "scale" : "ratio",
+            "note" : "my-traefik",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "unit" : "millisecond"
+            }
+          } ]
+        } ]
+      }, {
+        "termName" : "Location",
+        "type" : "sqo",
+        "value" : "Europe",
+        "conditionStatement" : "equal"
+      } ]
     },
-    "csSlas": {
-      "22": {
-        "description": "r4.xlarge",
-        "coveredServices": [
-          "Virtual Machine"
-        ],
-        "objectives": [
-          {
-            "termName": "Region",
-            "type": "sqo",
-            "value": "North America",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Zone",
-            "type": "sqo",
-            "value": "United States",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Provider",
-            "type": "sqo",
-            "value": "Amazon",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Availability",
-            "type": "slo",
-            "value": "98.5",
-            "unit": "percentage",
-            "conditionStatement": "greaterOrEqual",
-            "metrics": [
-              {
-                "id": "CS_22_001",
-                "descriptor": "Uptime during a specific time period",
-                "scale": "ratio",
-                "expression": {
-                  "expression": "AVAILABILITY_UPTIME_BC",
-                  "expressionLanguage": "predefined",
-                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
-                  "unit": "percentage"
-                }
-              }
-            ]
-          },
-          {
-            "comment": "Response time: Virtual Machine Performance",
-            "termName": "Performance",
-            "type": "slo",
-            "value": "2",
-            "unit": "millisecond",
-            "conditionStatement": "lessOrEqual",
-            "metrics": [
-              {
-                "id": "CS_22_001",
-                "descriptor": "Response time for a request",
-                "scale": "interval",
-                "expression": {
-                  "expression": "EMPTY",
-                  "expressionLanguage": "predefined",
-                  "note": "delta(t)",
-                  "unit": "millisecond"
-                }
-              }
-            ]
-          },
-          {
-            "termName": "Cost",
-            "type": "slo",
-            "value": "214",
-            "unit": "euro",
-            "conditionStatement": "less"
-          },
-          {
-            "termName": "Smart contracting",
-            "value": "YES"
-          }
-        ]
+    "csSlas" : {
+      "23" : {
+        "description" : "x1e.4xlarge",
+        "coveredServices" : [ "Virtual Machine" ],
+        "objectives" : [ {
+          "termName" : "Region",
+          "type" : "sqo",
+          "value" : "Europe",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Zone",
+          "type" : "sqo",
+          "value" : "Germany",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Provider",
+          "type" : "sqo",
+          "value" : "Amazon",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Availability",
+          "type" : "slo",
+          "value" : "99",
+          "unit" : "percentage",
+          "conditionStatement" : "greaterOrEqual",
+          "metrics" : [ {
+            "id" : "CS_23_001",
+            "descriptor" : "Uptime during a specific time period",
+            "scale" : "ratio",
+            "expression" : {
+              "expression" : "AVAILABILITY_UPTIME_BC",
+              "expressionLanguage" : "predefined",
+              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
+              "unit" : "percentage"
+            }
+          } ]
+        }, {
+          "comment" : "Response time: Virtual Machine Performance",
+          "termName" : "Performance",
+          "type" : "slo",
+          "value" : "2",
+          "unit" : "millisecond",
+          "conditionStatement" : "lessOrEqual",
+          "metrics" : [ {
+            "id" : "CS_23_001",
+            "descriptor" : "Response time for a request",
+            "scale" : "interval",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "note" : "delta(t)",
+              "unit" : "millisecond"
+            }
+          } ]
+        }, {
+          "termName" : "Cost",
+          "type" : "slo",
+          "value" : "3376",
+          "unit" : "euro",
+          "conditionStatement" : "less"
+        }, {
+          "termName" : "Smart contracting",
+          "value" : "YES"
+        } ]
       },
-      "13": {
-        "description": "t2.nano",
-        "coveredServices": [
-          "Virtual Machine"
-        ],
-        "objectives": [
-          {
-            "termName": "Region",
-            "type": "sqo",
-            "value": "Europe",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Zone",
-            "type": "sqo",
-            "value": "Ireland",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Provider",
-            "type": "sqo",
-            "value": "Amazon",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Availability",
-            "type": "slo",
-            "value": "98",
-            "unit": "percentage",
-            "conditionStatement": "greaterOrEqual",
-            "metrics": [
-              {
-                "id": "CS_13_001",
-                "descriptor": "Uptime during a specific time period",
-                "scale": "ratio",
-                "expression": {
-                  "expression": "AVAILABILITY_UPTIME_BC",
-                  "expressionLanguage": "predefined",
-                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
-                  "unit": "percentage"
-                }
-              }
-            ]
-          },
-          {
-            "comment": "Response time: Virtual Machine Performance",
-            "termName": "Performance",
-            "type": "slo",
-            "value": "3",
-            "unit": "millisecond",
-            "conditionStatement": "lessOrEqual",
-            "metrics": [
-              {
-                "id": "CS_13_001",
-                "descriptor": "Response time for a request",
-                "scale": "interval",
-                "expression": {
-                  "expression": "EMPTY",
-                  "expressionLanguage": "predefined",
-                  "note": "delta(t)",
-                  "unit": "millisecond"
-                }
-              }
-            ]
-          },
-          {
-            "termName": "Cost",
-            "type": "slo",
-            "value": "4.53",
-            "unit": "euro",
-            "conditionStatement": "less"
-          },
-          {
-            "termName": "Smart contracting",
-            "value": "YES"
-          }
-        ]
+      "1" : {
+        "description" : "C1_Spain",
+        "coveredServices" : [ "Virtual Machine" ],
+        "objectives" : [ {
+          "termName" : "Region",
+          "type" : "sqo",
+          "value" : "Europe",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Zone",
+          "type" : "sqo",
+          "value" : "Spain",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Provider",
+          "type" : "sqo",
+          "value" : "Arsys",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Availability",
+          "type" : "slo",
+          "value" : "99.5",
+          "unit" : "percentage",
+          "conditionStatement" : "greaterOrEqual",
+          "metrics" : [ {
+            "id" : "CS_1_001",
+            "descriptor" : "Uptime during a specific time period",
+            "scale" : "ratio",
+            "expression" : {
+              "expression" : "AVAILABILITY_UPTIME_BC",
+              "expressionLanguage" : "predefined",
+              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
+              "unit" : "percentage"
+            }
+          } ]
+        }, {
+          "comment" : "Response time: Virtual Machine Performance",
+          "termName" : "Performance",
+          "type" : "slo",
+          "value" : "5",
+          "unit" : "millisecond",
+          "conditionStatement" : "lessOrEqual",
+          "metrics" : [ {
+            "id" : "CS_1_001",
+            "descriptor" : "Response time for a request",
+            "scale" : "interval",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "note" : "delta(t)",
+              "unit" : "millisecond"
+            }
+          } ]
+        }, {
+          "comment" : "Legal Level/Accreditations",
+          "termName" : "LegalLevel",
+          "type" : "sqo",
+          "value" : "0",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Cost",
+          "type" : "slo",
+          "value" : "15",
+          "unit" : "euro",
+          "conditionStatement" : "less"
+        }, {
+          "termName" : "Smart contracting",
+          "value" : "YES"
+        } ]
       },
-      "48": {
-        "description": "m1.medium",
-        "coveredServices": [
-          "Virtual Machine"
-        ],
-        "objectives": [
-          {
-            "termName": "Region",
-            "type": "sqo",
-            "value": "North America",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Zone",
-            "type": "sqo",
-            "value": "United States",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Provider",
-            "type": "sqo",
-            "value": "Amazon",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Availability",
-            "type": "slo",
-            "value": "98",
-            "unit": "percentage",
-            "conditionStatement": "greaterOrEqual",
-            "metrics": [
-              {
-                "id": "CS_48_001",
-                "descriptor": "Uptime during a specific time period",
-                "scale": "ratio",
-                "expression": {
-                  "expression": "AVAILABILITY_UPTIME_BC",
-                  "expressionLanguage": "predefined",
-                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
-                  "unit": "percentage"
-                }
-              }
-            ]
-          },
-          {
-            "comment": "Response time: Virtual Machine Performance",
-            "termName": "Performance",
-            "type": "slo",
-            "value": "100",
-            "unit": "millisecond",
-            "conditionStatement": "lessOrEqual",
-            "metrics": [
-              {
-                "id": "CS_48_001",
-                "descriptor": "Response time for a request",
-                "scale": "interval",
-                "expression": {
-                  "expression": "EMPTY",
-                  "expressionLanguage": "predefined",
-                  "note": "delta(t)",
-                  "unit": "millisecond"
-                }
-              }
-            ]
-          },
-          {
-            "termName": "Cost",
-            "type": "slo",
-            "value": "200",
-            "unit": "euro",
-            "conditionStatement": "less"
-          },
-          {
-            "termName": "Smart contracting",
-            "value": "YES"
-          }
-        ]
+      "13" : {
+        "description" : "t2.nano",
+        "coveredServices" : [ "Virtual Machine" ],
+        "objectives" : [ {
+          "termName" : "Region",
+          "type" : "sqo",
+          "value" : "Europe",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Zone",
+          "type" : "sqo",
+          "value" : "Ireland",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Provider",
+          "type" : "sqo",
+          "value" : "Amazon",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Availability",
+          "type" : "slo",
+          "value" : "98",
+          "unit" : "percentage",
+          "conditionStatement" : "greaterOrEqual",
+          "metrics" : [ {
+            "id" : "CS_13_001",
+            "descriptor" : "Uptime during a specific time period",
+            "scale" : "ratio",
+            "expression" : {
+              "expression" : "AVAILABILITY_UPTIME_BC",
+              "expressionLanguage" : "predefined",
+              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
+              "unit" : "percentage"
+            }
+          } ]
+        }, {
+          "comment" : "Response time: Virtual Machine Performance",
+          "termName" : "Performance",
+          "type" : "slo",
+          "value" : "3",
+          "unit" : "millisecond",
+          "conditionStatement" : "lessOrEqual",
+          "metrics" : [ {
+            "id" : "CS_13_001",
+            "descriptor" : "Response time for a request",
+            "scale" : "interval",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "note" : "delta(t)",
+              "unit" : "millisecond"
+            }
+          } ]
+        }, {
+          "termName" : "Cost",
+          "type" : "slo",
+          "value" : "4.53",
+          "unit" : "euro",
+          "conditionStatement" : "less"
+        }, {
+          "termName" : "Smart contracting",
+          "value" : "YES"
+        } ]
       },
-      "16": {
-        "description": "m4.4xlarge",
-        "coveredServices": [
-          "Virtual Machine"
-        ],
-        "objectives": [
-          {
-            "termName": "Region",
-            "type": "sqo",
-            "value": "Europe",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Zone",
-            "type": "sqo",
-            "value": "Spain",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Provider",
-            "type": "sqo",
-            "value": "Amazon",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Availability",
-            "type": "slo",
-            "value": "99.8",
-            "unit": "percentage",
-            "conditionStatement": "greaterOrEqual",
-            "metrics": [
-              {
-                "id": "CS_16_001",
-                "descriptor": "Uptime during a specific time period",
-                "scale": "ratio",
-                "expression": {
-                  "expression": "AVAILABILITY_UPTIME_BC",
-                  "expressionLanguage": "predefined",
-                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
-                  "unit": "percentage"
-                }
-              }
-            ]
-          },
-          {
-            "comment": "Response time: Virtual Machine Performance",
-            "termName": "Performance",
-            "type": "slo",
-            "value": "2",
-            "unit": "millisecond",
-            "conditionStatement": "lessOrEqual",
-            "metrics": [
-              {
-                "id": "CS_16_001",
-                "descriptor": "Response time for a request",
-                "scale": "interval",
-                "expression": {
-                  "expression": "EMPTY",
-                  "expressionLanguage": "predefined",
-                  "note": "delta(t)",
-                  "unit": "millisecond"
-                }
-              }
-            ]
-          },
-          {
-            "termName": "Cost",
-            "type": "slo",
-            "value": "640",
-            "unit": "euro",
-            "conditionStatement": "less"
-          },
-          {
-            "termName": "Smart contracting",
-            "value": "YES"
-          }
-        ]
+      "35" : {
+        "description" : "DS13v2",
+        "coveredServices" : [ "Virtual Machine" ],
+        "objectives" : [ {
+          "termName" : "Region",
+          "type" : "sqo",
+          "value" : "Europe",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Provider",
+          "type" : "sqo",
+          "value" : "Azure",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Availability",
+          "type" : "slo",
+          "value" : "98",
+          "unit" : "percentage",
+          "conditionStatement" : "greaterOrEqual",
+          "metrics" : [ {
+            "id" : "CS_35_001",
+            "descriptor" : "Uptime during a specific time period",
+            "scale" : "ratio",
+            "expression" : {
+              "expression" : "AVAILABILITY_UPTIME_BC",
+              "expressionLanguage" : "predefined",
+              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
+              "unit" : "percentage"
+            }
+          } ]
+        }, {
+          "comment" : "Response time: Virtual Machine Performance",
+          "termName" : "Performance",
+          "type" : "slo",
+          "value" : "3",
+          "unit" : "millisecond",
+          "conditionStatement" : "lessOrEqual",
+          "metrics" : [ {
+            "id" : "CS_35_001",
+            "descriptor" : "Response time for a request",
+            "scale" : "interval",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "note" : "delta(t)",
+              "unit" : "millisecond"
+            }
+          } ]
+        }, {
+          "comment" : "Legal Level/Accreditations",
+          "termName" : "LegalLevel",
+          "type" : "sqo",
+          "value" : "0",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Cost",
+          "type" : "slo",
+          "value" : "541",
+          "unit" : "euro",
+          "conditionStatement" : "less"
+        }, {
+          "termName" : "Smart contracting",
+          "value" : "YES"
+        } ]
       },
-      "18": {
-        "description": "c5.2xlarge",
-        "coveredServices": [
-          "Virtual Machine"
-        ],
-        "objectives": [
-          {
-            "termName": "Region",
-            "type": "sqo",
-            "value": "North America",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Zone",
-            "type": "sqo",
-            "value": "Canada",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Provider",
-            "type": "sqo",
-            "value": "Amazon",
-            "conditionStatement": "equal"
-          },
-          {
-            "termName": "Availability",
-            "type": "slo",
-            "value": "99.4",
-            "unit": "percentage",
-            "conditionStatement": "greaterOrEqual",
-            "metrics": [
-              {
-                "id": "CS_18_001",
-                "descriptor": "Uptime during a specific time period",
-                "scale": "ratio",
-                "expression": {
-                  "expression": "AVAILABILITY_UPTIME_BC",
-                  "expressionLanguage": "predefined",
-                  "note": "100 - (billingCycle - totalDowntime)/billingCycle",
-                  "unit": "percentage"
-                }
-              }
-            ]
-          },
-          {
-            "comment": "Response time: Virtual Machine Performance",
-            "termName": "Performance",
-            "type": "slo",
-            "value": "5",
-            "unit": "millisecond",
-            "conditionStatement": "lessOrEqual",
-            "metrics": [
-              {
-                "id": "CS_18_001",
-                "descriptor": "Response time for a request",
-                "scale": "interval",
-                "expression": {
-                  "expression": "EMPTY",
-                  "expressionLanguage": "predefined",
-                  "note": "delta(t)",
-                  "unit": "millisecond"
-                }
-              }
-            ]
-          },
-          {
-            "termName": "Cost",
-            "type": "slo",
-            "value": "268",
-            "unit": "euro",
-            "conditionStatement": "less"
-          },
-          {
-            "termName": "Smart contracting",
-            "value": "YES"
-          }
-        ]
+      "4" : {
+        "description" : "C2_UnitedKingdom",
+        "coveredServices" : [ "Virtual Machine" ],
+        "objectives" : [ {
+          "termName" : "Region",
+          "type" : "sqo",
+          "value" : "Europe",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Zone",
+          "type" : "sqo",
+          "value" : "United Kingdom",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Provider",
+          "type" : "sqo",
+          "value" : "Arsys",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Availability",
+          "type" : "slo",
+          "value" : "99.6",
+          "unit" : "percentage",
+          "conditionStatement" : "greaterOrEqual",
+          "metrics" : [ {
+            "id" : "CS_4_001",
+            "descriptor" : "Uptime during a specific time period",
+            "scale" : "ratio",
+            "expression" : {
+              "expression" : "AVAILABILITY_UPTIME_BC",
+              "expressionLanguage" : "predefined",
+              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
+              "unit" : "percentage"
+            }
+          } ]
+        }, {
+          "comment" : "Response time: Virtual Machine Performance",
+          "termName" : "Performance",
+          "type" : "slo",
+          "value" : "3",
+          "unit" : "millisecond",
+          "conditionStatement" : "lessOrEqual",
+          "metrics" : [ {
+            "id" : "CS_4_001",
+            "descriptor" : "Response time for a request",
+            "scale" : "interval",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "note" : "delta(t)",
+              "unit" : "millisecond"
+            }
+          } ]
+        }, {
+          "comment" : "Legal Level/Accreditations",
+          "termName" : "LegalLevel",
+          "type" : "sqo",
+          "value" : "0",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Cost",
+          "type" : "slo",
+          "value" : "40",
+          "unit" : "euro",
+          "conditionStatement" : "less"
+        }, {
+          "termName" : "Smart contracting",
+          "value" : "YES"
+        } ]
+      },
+      "19" : {
+        "description" : "c4.8xlarge",
+        "coveredServices" : [ "Virtual Machine" ],
+        "objectives" : [ {
+          "termName" : "Region",
+          "type" : "sqo",
+          "value" : "Europe",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Zone",
+          "type" : "sqo",
+          "value" : "Ireland",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Provider",
+          "type" : "sqo",
+          "value" : "Amazon",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Availability",
+          "type" : "slo",
+          "value" : "99.8",
+          "unit" : "percentage",
+          "conditionStatement" : "greaterOrEqual",
+          "metrics" : [ {
+            "id" : "CS_19_001",
+            "descriptor" : "Uptime during a specific time period",
+            "scale" : "ratio",
+            "expression" : {
+              "expression" : "AVAILABILITY_UPTIME_BC",
+              "expressionLanguage" : "predefined",
+              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
+              "unit" : "percentage"
+            }
+          } ]
+        }, {
+          "comment" : "Response time: Virtual Machine Performance",
+          "termName" : "Performance",
+          "type" : "slo",
+          "value" : "2",
+          "unit" : "millisecond",
+          "conditionStatement" : "lessOrEqual",
+          "metrics" : [ {
+            "id" : "CS_19_001",
+            "descriptor" : "Response time for a request",
+            "scale" : "interval",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "note" : "delta(t)",
+              "unit" : "millisecond"
+            }
+          } ]
+        }, {
+          "termName" : "Cost",
+          "type" : "slo",
+          "value" : "1304",
+          "unit" : "euro",
+          "conditionStatement" : "less"
+        }, {
+          "termName" : "Smart contracting",
+          "value" : "YES"
+        } ]
+      },
+      "30" : {
+        "description" : "A2v2",
+        "coveredServices" : [ "Virtual Machine" ],
+        "objectives" : [ {
+          "termName" : "Region",
+          "type" : "sqo",
+          "value" : "Europe",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Zone",
+          "type" : "sqo",
+          "value" : "Ireland",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Provider",
+          "type" : "sqo",
+          "value" : "Azure",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Availability",
+          "type" : "slo",
+          "value" : "95",
+          "unit" : "percentage",
+          "conditionStatement" : "greaterOrEqual",
+          "metrics" : [ {
+            "id" : "CS_30_001",
+            "descriptor" : "Uptime during a specific time period",
+            "scale" : "ratio",
+            "expression" : {
+              "expression" : "AVAILABILITY_UPTIME_BC",
+              "expressionLanguage" : "predefined",
+              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
+              "unit" : "percentage"
+            }
+          } ]
+        }, {
+          "comment" : "Response time: Virtual Machine Performance",
+          "termName" : "Performance",
+          "type" : "slo",
+          "value" : "5",
+          "unit" : "millisecond",
+          "conditionStatement" : "lessOrEqual",
+          "metrics" : [ {
+            "id" : "CS_30_001",
+            "descriptor" : "Response time for a request",
+            "scale" : "interval",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "note" : "delta(t)",
+              "unit" : "millisecond"
+            }
+          } ]
+        }, {
+          "comment" : "Legal Level/Accreditations",
+          "termName" : "LegalLevel",
+          "type" : "sqo",
+          "value" : "0",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Cost",
+          "type" : "slo",
+          "value" : "93.60",
+          "unit" : "euro",
+          "conditionStatement" : "less"
+        }, {
+          "termName" : "Smart contracting",
+          "value" : "YES"
+        } ]
+      },
+      "21" : {
+        "description" : "p2.8xlarge",
+        "coveredServices" : [ "Virtual Machine" ],
+        "objectives" : [ {
+          "termName" : "Region",
+          "type" : "sqo",
+          "value" : "Europe",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Zone",
+          "type" : "sqo",
+          "value" : "United Kingdom",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Provider",
+          "type" : "sqo",
+          "value" : "Amazon",
+          "conditionStatement" : "equal"
+        }, {
+          "termName" : "Availability",
+          "type" : "slo",
+          "value" : "99.9",
+          "unit" : "percentage",
+          "conditionStatement" : "greaterOrEqual",
+          "metrics" : [ {
+            "id" : "CS_21_001",
+            "descriptor" : "Uptime during a specific time period",
+            "scale" : "ratio",
+            "expression" : {
+              "expression" : "AVAILABILITY_UPTIME_BC",
+              "expressionLanguage" : "predefined",
+              "note" : "100 - (billingCycle - totalDowntime)/billingCycle",
+              "unit" : "percentage"
+            }
+          } ]
+        }, {
+          "comment" : "Response time: Virtual Machine Performance",
+          "termName" : "Performance",
+          "type" : "slo",
+          "value" : "2",
+          "unit" : "millisecond",
+          "conditionStatement" : "lessOrEqual",
+          "metrics" : [ {
+            "id" : "CS_21_001",
+            "descriptor" : "Response time for a request",
+            "scale" : "interval",
+            "expression" : {
+              "expression" : "EMPTY",
+              "expressionLanguage" : "predefined",
+              "note" : "delta(t)",
+              "unit" : "millisecond"
+            }
+          } ]
+        }, {
+          "termName" : "Cost",
+          "type" : "slo",
+          "value" : "5600",
+          "unit" : "euro",
+          "conditionStatement" : "less"
+        }, {
+          "termName" : "Smart contracting",
+          "value" : "YES"
+        } ]
       }
     }
   },
-  "containers": [
-    {
-      "containerName": "front-end",
-      "imageName": "weaveworksdemos/front-end",
-      "imageTag": "latest",
-      "hostname": "front-end",
-      "restart": "no",
-      "dockerHostNodeName": "VM1_Amazon_Ubuntu16_04",
-      "hostMapping": [
-        {
-          "referencedContainerName": "my-traefik",
-          "host": "catalogue"
-        },
-        {
-          "referencedContainerName": "my-traefik",
-          "host": "carts"
-        },
-        {
-          "referencedContainerName": "my-traefik",
-          "host": "user"
-        },
-        {
-          "referencedContainerName": "zipkin",
-          "host": "zipkin"
-        }
-      ],
-      "addConsulService": 0,
-      "consulServicePort": 8479,
-      "addConsulTraefikRules": 1,
-      "portMapping": [
-        {
-          "hostPort": "8479",
-          "containerPort": "8079"
-        }
-      ],
-      "endpoints": [
-        {
-          "protocol": "http",
-          "port": 8479,
-          "skipRule": 1,
-          "containerNameOverride": "shop-front-end"
-        }
-      ]
-    },
-    {
-      "containerName": "zipkin",
-      "imageName": "openzipkin/zipkin",
-      "imageTag": "latest",
-      "hostname": "zipkin",
-      "restart": "no",
-      "dockerHostNodeName": "VM3_Amazon_Ubuntu16_04",
-      "environment": [
-        "reschedule=on-node-failure"
-      ],
-      "addConsulService": 0,
-      "consulServicePort": 0,
-      "addConsulTraefikRules": 1,
-      "portMapping": [
-        {
-          "hostPort": "8493",
-          "containerPort": "9411"
-        }
-      ],
-      "endpoints": [
-        {
-          "protocol": "http",
-          "port": 9411
-        }
-      ]
-    },
-    {
-      "containerName": "catalogue",
-      "imageName": "weaveworksdemos/catalogue",
-      "imageTag": "latest",
-      "hostname": "catalogue",
-      "restart": "no",
-      "dockerHostNodeName": "VM0_Amazon_Ubuntu16_04",
-      "networks": [
-        "catalogue-network"
-      ],
-      "environment": [
-        "ZIPKIN=http://TBD_zipkin-ip:8493/api/v1/spans"
-      ],
-      "addConsulService": 0,
-      "consulServicePort": 0,
-      "addConsulTraefikRules": 1,
-      "portMapping": [
-        {
-          "hostPort": "8480",
-          "containerPort": "80"
-        }
-      ],
-      "endpoints": [
-        {
-          "protocol": "http",
-          "port": 8480
-        }
-      ]
-    },
-    {
-      "containerName": "user",
-      "imageName": "weaveworksdemos/user",
-      "imageTag": "latest",
-      "hostname": "user",
-      "restart": "no",
-      "dockerHostNodeName": "VM0_Amazon_Ubuntu16_04",
-      "networks": [
-        "user-network"
-      ],
-      "hostMapping": [
-        {
-          "referencedContainerName": "my-traefik",
-          "host": "zipkin"
-        }
-      ],
-      "environment": [
-        "MONGO_HOST=user-db:27017"
-      ],
-      "addConsulService": 0,
-      "consulServicePort": 0,
-      "addConsulTraefikRules": 1,
-      "portMapping": [
-        {
-          "hostPort": "8485",
-          "containerPort": "80"
-        }
-      ],
-      "endpoints": [
-        {
-          "protocol": "http",
-          "port": 8485
-        }
-      ]
-    },
-    {
-      "containerName": "carts",
-      "imageName": "weaveworksdemos/carts",
-      "imageTag": "latest",
-      "hostname": "carts",
-      "restart": "no",
-      "dockerHostNodeName": "VM1_Amazon_Ubuntu16_04",
-      "networks": [
-        "carts-network"
-      ],
-      "environment": [
-        "JAVA_OPTS=-Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom",
-        "ZIPKIN=TBD_traefik-ip"
-      ],
-      "addConsulService": 0,
-      "consulServicePort": 0,
-      "addConsulTraefikRules": 1,
-      "portMapping": [
-        {
-          "hostPort": "8481",
-          "containerPort": "80"
-        }
-      ],
-      "endpoints": [
-        {
-          "protocol": "http",
-          "port": 8481
-        }
-      ]
-    },
-    {
-      "containerName": "shipping",
-      "imageName": "weaveworksdemos/shipping",
-      "imageTag": "latest",
-      "hostname": "shipping",
-      "restart": "no",
-      "dockerHostNodeName": "VM2_Amazon_Ubuntu16_04",
-      "networks": [
-        "shipping-network"
-      ],
-      "environment": [
-        "ZIPKIN=http://TBD_zipkin-ip}"
-      ],
-      "addConsulService": 0,
-      "consulServicePort": 0,
-      "addConsulTraefikRules": 1,
-      "portMapping": [
-        {
-          "hostPort": "8483",
-          "containerPort": "80"
-        }
-      ],
-      "endpoints": [
-        {
-          "protocol": "http",
-          "port": 8483
-        }
-      ]
-    },
-    {
-      "containerName": "orders",
-      "imageName": "weaveworksdemos/orders",
-      "imageTag": "latest",
-      "hostname": "orders",
-      "restart": "no",
-      "dockerHostNodeName": "VM2_Amazon_Ubuntu16_04",
-      "networks": [
-        "orders-network"
-      ],
-      "environment": [
-        "ZIPKIN=http://TBD_zipkin-ip}"
-      ],
-      "addConsulService": 0,
-      "consulServicePort": 0,
-      "addConsulTraefikRules": 1,
-      "portMapping": [
-        {
-          "hostPort": "8482",
-          "containerPort": "80"
-        }
-      ],
-      "endpoints": [
-        {
-          "protocol": "http",
-          "port": 8482
-        }
-      ]
-    },
-    {
-      "containerName": "queue-master",
-      "imageName": "weaveworksdemos/queue-master",
-      "imageTag": "latest",
-      "hostname": "queue-master",
-      "restart": "no",
-      "dockerHostNodeName": "VM3_Amazon_Ubuntu16_04",
-      "networks": [
-        "shipping-network"
-      ],
-      "volumeMapping": [
-        {
-          "hostPath": "/var/run/docker.sock",
-          "containerPath": "/var/run/docker.sock"
-        }
-      ],
-      "addConsulService": 0,
-      "consulServicePort": 0,
-      "addConsulTraefikRules": 0
-    },
-    {
-      "containerName": "payment",
-      "imageName": "weaveworksdemos/payment",
-      "imageTag": "latest",
-      "hostname": "payment",
-      "restart": "no",
-      "dockerHostNodeName": "VM1_Amazon_Ubuntu16_04",
-      "environment": [
-        "ZIPKIN=http://TBD_zipkin-ip}",
-        "reschedule=on-node-failure"
-      ],
-      "addConsulService": 0,
-      "consulServicePort": 0,
-      "addConsulTraefikRules": 1,
-      "portMapping": [
-        {
-          "hostPort": "8484",
-          "containerPort": "80"
-        }
-      ],
-      "endpoints": [
-        {
-          "protocol": "http",
-          "port": 8484
-        }
-      ]
-    },
-    {
-      "containerName": "my-traefik",
-      "imageName": "my-traefik",
-      "imageTag": "1",
-      "dockerPrivateRegistryIp": "82.223.98.37",
-      "dockerPrivateRegistryPort": 80,
-      "dockerPrivateRegistryUser": "decide-user",
-      "dockerPrivateRegistryPassword": "d3cid3",
-      "hostname": "my-traefik",
-      "restart": "no",
-      "command": [
-        "--consul",
-        "--consul.endpoint=82.223.81.97:8500",
-        "--consul.prefix=sockshopv9/traefik"
-      ],
-      "entrypoint": [
-        "traefik"
-      ],
-      "dockerHostNodeName": "VM1_Amazon_Ubuntu16_04",
-      "addConsulService": 0,
-      "consulServicePort": 0,
-      "addConsulTraefikRules": 0,
-      "portMapping": [
-        {
-          "hostPort": "80",
-          "containerPort": "80"
-        },
-        {
-          "hostPort": "8082",
-          "containerPort": "8082"
-        },
-        {
-          "hostPort": "9411",
-          "containerPort": "9411"
-        }
-      ],
-      "endpoints": [
-        {
-          "protocol": "http",
-          "port": 80
-        }
-      ]
-    }
-  ],
-  "virtualMachines": [
-    {
-      "vmId": "0",
-      "csId": "30",
-      "cspName": "Azure",
-      "cspId": "AZUR",
-      "ram": 8,
-      "cores": 2,
-      "storage": 1,
-      "image": "Ubuntu 16.04",
-      "vmSoftwareId": "21b7ebed-5076-43b6-8351-0e06cf16eedc",
-      "vmResourceId": "369f40d5-d5e8-49e8-b9fa-593811972137",
-      "vmRegionId": "81a29343-7580-4523-b670-03eeea5e9dae",
-      "instanceTypeId": "7b031b06-dc14-4017-9b7e-2ef97b32278d",
-      "keyPairId": "a1bfa977-5fe1-4e89-b2f8-def1e113e9eb",
-      "vmUser": "ubuntu",
-      "openedPorts": "22,80,8000-9000,9411",
-      "dockerHostNodeName": "VM0_Azure_Ubuntu16_04",
-      "cloudbrokerEndpoint": "https://decide-prototype.cloudbroker.com"
-    }
-  ],
-  "recommendedPatterns": [
-    {
-      "isOptional": false,
-      "title": "Dynamic Data Normalization",
-      "uriRef": "http://decideh2020.eu/resources/patterns/dynamic-data-normalization",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Elasticity Manager",
-      "uriRef": "http://decideh2020.eu/resources/patterns/elasticity-manager",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/scalability"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Micro Scatter-Gather",
-      "uriRef": "http://decideh2020.eu/resources/patterns/micro-scatter-gather",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Elastic Load Balancer",
-      "uriRef": "http://decideh2020.eu/resources/patterns/elastic-load-balancer",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/availability"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Direct I/O Access",
-      "uriRef": "http://decideh2020.eu/resources/patterns/direct-io-access",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Content Distribution Network",
-      "uriRef": "http://decideh2020.eu/resources/patterns/content-distribution-network",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/deployment"
-      ],
-      "selected": true,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Throttling",
-      "uriRef": "http://decideh2020.eu/resources/patterns/throttling",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/availability"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Service State Management",
-      "uriRef": "http://decideh2020.eu/resources/patterns/service-state-management",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/development"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Cloud Storage Device Performance Enforcement",
-      "uriRef": "http://decideh2020.eu/resources/patterns/cloud-storage-device-performance-enforcement",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/development"
-      ],
-      "selected": true,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Elastic Queue",
-      "uriRef": "http://decideh2020.eu/resources/patterns/elastic-queue",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/scalability"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Direct LUN Access",
-      "uriRef": "http://decideh2020.eu/resources/patterns/direct-lun-access",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/optimization"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Usage Monitoring",
-      "uriRef": "http://decideh2020.eu/resources/patterns/usage-monitoring",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/development"
-      ],
-      "selected": false,
-      "provides": [
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/availability"
-        },
-        {
-          "abstractValue": "high",
-          "impactedNFR": "http://decideh2020.eu/resources/patterns/performance"
-        }
-      ]
-    },
-    {
-      "isOptional": false,
-      "title": "Service Registry",
-      "uriRef": "http://decideh2020.eu/resources/patterns/service-registry",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/basic"
-      ],
-      "selected": false
-    },
-    {
-      "isOptional": false,
-      "title": "Two-Tier Cloud Application",
-      "uriRef": "http://decideh2020.eu/resources/patterns/two-tier-cloud-application",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/basic"
-      ],
-      "selected": false
-    },
-    {
-      "isOptional": false,
-      "title": "Loose Coupling",
-      "uriRef": "http://decideh2020.eu/resources/patterns/loose-coupling",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/basic"
-      ],
-      "selected": true
-    },
-    {
-      "isOptional": false,
-      "title": "Distributed Application",
-      "uriRef": "http://decideh2020.eu/resources/patterns/distributed-application",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/basic"
-      ],
-      "selected": true
-    },
-    {
-      "isOptional": false,
-      "title": "Three-Tier Cloud Application",
-      "uriRef": "http://decideh2020.eu/resources/patterns/three-tier-cloud-application",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/basic"
-      ],
-      "selected": false
-    },
-    {
-      "isOptional": false,
-      "title": "Managed Configuration",
-      "uriRef": "http://decideh2020.eu/resources/patterns/managed-configuration",
-      "categories": [
-        "http://decideh2020.eu/resources/patterncategories/basic"
-      ],
-      "selected": false
-    }
-  ],
-  "schema": [
-    {
-      "microservices": [
-        "11971eed-ecbd-464c-9492-da18f3405dd0",
-        "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b"
-      ],
-      "csId": "30",
-      "vmId": 0
-    }
-  ],
-  "monitoring": {
-    "status": false,
-    "urls": [
-      "http://adapt.monitoring.grafana:3000/d/vvuSv9fWz/sockshopv9-availability-1",
-      "http://adapt.monitoring.grafana:3000/d/7KXSvrfZk/sockshopv9-performance-1"
-    ]
+  "containers" : [ {
+    "containerName" : "front-end",
+    "imageName" : "weaveworksdemos/front-end",
+    "imageTag" : "latest",
+    "hostname" : "front-end",
+    "restart" : "no",
+    "dockerHostNodeName" : "VM10_Amazon_Ubuntu16_04",
+    "hostMapping" : [ {
+      "referencedContainerName" : "my-traefik",
+      "host" : "catalogue"
+    }, {
+      "referencedContainerName" : "my-traefik",
+      "host" : "carts"
+    }, {
+      "referencedContainerName" : "my-traefik",
+      "host" : "user"
+    }, {
+      "referencedContainerName" : "zipkin",
+      "host" : "zipkin"
+    } ],
+    "addConsulService" : 0,
+    "consulServicePort" : 8479,
+    "addConsulTraefikRules" : 1,
+    "portMapping" : [ {
+      "hostPort" : "8479",
+      "containerPort" : "8079"
+    } ],
+    "endpoints" : [ {
+      "protocol" : "http",
+      "port" : 8479,
+      "skipRule" : 1,
+      "containerNameOverride" : "shop-front-end"
+    } ]
+  }, {
+    "containerName" : "zipkin",
+    "imageName" : "openzipkin/zipkin",
+    "imageTag" : "latest",
+    "hostname" : "zipkin",
+    "restart" : "no",
+    "dockerHostNodeName" : "VM11_Microsoft_Ubuntu16_04",
+    "environment" : [ "reschedule=on-node-failure" ],
+    "addConsulService" : 0,
+    "consulServicePort" : 0,
+    "addConsulTraefikRules" : 1,
+    "portMapping" : [ {
+      "hostPort" : "8493",
+      "containerPort" : "9411"
+    } ],
+    "endpoints" : [ {
+      "protocol" : "http",
+      "port" : 9411
+    } ]
+  }, {
+    "containerName" : "catalogue",
+    "imageName" : "weaveworksdemos/catalogue",
+    "imageTag" : "latest",
+    "hostname" : "catalogue",
+    "restart" : "no",
+    "dockerHostNodeName" : "VM4_Amazon_Ubuntu16_04",
+    "networks" : [ "catalogue-network" ],
+    "environment" : [ "ZIPKIN=http://TBD_zipkin-ip:8493/api/v1/spans" ],
+    "addConsulService" : 0,
+    "consulServicePort" : 0,
+    "addConsulTraefikRules" : 1,
+    "portMapping" : [ {
+      "hostPort" : "8480",
+      "containerPort" : "80"
+    } ],
+    "endpoints" : [ {
+      "protocol" : "http",
+      "port" : 8480
+    } ]
+  }, {
+    "containerName" : "user",
+    "imageName" : "weaveworksdemos/user",
+    "imageTag" : "latest",
+    "hostname" : "user",
+    "restart" : "no",
+    "dockerHostNodeName" : "VM9_Arsys_Ubuntu16_04",
+    "networks" : [ "user-network" ],
+    "hostMapping" : [ {
+      "referencedContainerName" : "my-traefik",
+      "host" : "zipkin"
+    } ],
+    "environment" : [ "MONGO_HOST=user-db:27017" ],
+    "addConsulService" : 0,
+    "consulServicePort" : 0,
+    "addConsulTraefikRules" : 1,
+    "portMapping" : [ {
+      "hostPort" : "8485",
+      "containerPort" : "80"
+    } ],
+    "endpoints" : [ {
+      "protocol" : "http",
+      "port" : 8485
+    } ]
+  }, {
+    "containerName" : "carts",
+    "imageName" : "weaveworksdemos/carts",
+    "imageTag" : "latest",
+    "hostname" : "carts",
+    "restart" : "no",
+    "dockerHostNodeName" : "VM5_Arsys_Ubuntu16_04",
+    "networks" : [ "carts-network" ],
+    "environment" : [ "JAVA_OPTS=-Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom", "ZIPKIN=TBD_traefik-ip" ],
+    "addConsulService" : 0,
+    "consulServicePort" : 0,
+    "addConsulTraefikRules" : 1,
+    "portMapping" : [ {
+      "hostPort" : "8481",
+      "containerPort" : "80"
+    } ],
+    "endpoints" : [ {
+      "protocol" : "http",
+      "port" : 8481
+    } ]
+  }, {
+    "containerName" : "shipping",
+    "imageName" : "weaveworksdemos/shipping",
+    "imageTag" : "latest",
+    "hostname" : "shipping",
+    "restart" : "no",
+    "dockerHostNodeName" : "VM7_Microsoft_Ubuntu16_04",
+    "networks" : [ "shipping-network" ],
+    "environment" : [ "ZIPKIN=http://TBD_zipkin-ip}" ],
+    "addConsulService" : 0,
+    "consulServicePort" : 0,
+    "addConsulTraefikRules" : 1,
+    "portMapping" : [ {
+      "hostPort" : "8483",
+      "containerPort" : "80"
+    } ],
+    "endpoints" : [ {
+      "protocol" : "http",
+      "port" : 8483
+    } ]
+  }, {
+    "containerName" : "orders",
+    "imageName" : "weaveworksdemos/orders",
+    "imageTag" : "latest",
+    "hostname" : "orders",
+    "restart" : "no",
+    "dockerHostNodeName" : "VM6_Amazon_Ubuntu16_04",
+    "networks" : [ "orders-network" ],
+    "environment" : [ "ZIPKIN=http://TBD_zipkin-ip}" ],
+    "addConsulService" : 0,
+    "consulServicePort" : 0,
+    "addConsulTraefikRules" : 1,
+    "portMapping" : [ {
+      "hostPort" : "8482",
+      "containerPort" : "80"
+    } ],
+    "endpoints" : [ {
+      "protocol" : "http",
+      "port" : 8482
+    } ]
+  }, {
+    "containerName" : "queue-master",
+    "imageName" : "weaveworksdemos/queue-master",
+    "imageTag" : "latest",
+    "hostname" : "queue-master",
+    "restart" : "no",
+    "dockerHostNodeName" : "VM8_Amazon_Ubuntu16_04",
+    "networks" : [ "shipping-network" ],
+    "volumeMapping" : [ {
+      "hostPath" : "/var/run/docker.sock",
+      "containerPath" : "/var/run/docker.sock"
+    } ],
+    "addConsulService" : 0,
+    "consulServicePort" : 0,
+    "addConsulTraefikRules" : 0
+  }, {
+    "containerName" : "payment",
+    "imageName" : "weaveworksdemos/payment",
+    "imageTag" : "latest",
+    "hostname" : "payment",
+    "restart" : "no",
+    "dockerHostNodeName" : "VM7_Microsoft_Ubuntu16_04",
+    "environment" : [ "ZIPKIN=http://TBD_zipkin-ip}", "reschedule=on-node-failure" ],
+    "addConsulService" : 0,
+    "consulServicePort" : 0,
+    "addConsulTraefikRules" : 1,
+    "portMapping" : [ {
+      "hostPort" : "8484",
+      "containerPort" : "80"
+    } ],
+    "endpoints" : [ {
+      "protocol" : "http",
+      "port" : 8484
+    } ]
+  }, {
+    "containerName" : "my-traefik",
+    "imageName" : "my-traefik",
+    "imageTag" : "1",
+    "dockerPrivateRegistryIp" : "82.223.98.37",
+    "dockerPrivateRegistryPort" : 80,
+    "dockerPrivateRegistryUser" : "decide-user",
+    "dockerPrivateRegistryPassword" : "d3cid3",
+    "hostname" : "my-traefik",
+    "restart" : "no",
+    "command" : [ "--consul", "--consul.endpoint=82.223.81.97:8500", "--consul.prefix=sockshopv15/traefik" ],
+    "entrypoint" : [ "traefik" ],
+    "dockerHostNodeName" : "VM12_Microsoft_Ubuntu16_04",
+    "addConsulService" : 0,
+    "consulServicePort" : 0,
+    "addConsulTraefikRules" : 0,
+    "portMapping" : [ {
+      "hostPort" : "80",
+      "containerPort" : "80"
+    }, {
+      "hostPort" : "8082",
+      "containerPort" : "8082"
+    }, {
+      "hostPort" : "9411",
+      "containerPort" : "9411"
+    } ],
+    "endpoints" : [ {
+      "protocol" : "http",
+      "port" : 80
+    } ]
+  } ],
+  "virtualMachines" : [ {
+    "csId" : "21",
+    "vmId" : "4",
+    "cspId" : "AMAZ",
+    "cspName" : "Amazon",
+    "ram" : 4,
+    "cores" : 2,
+    "storage" : 1,
+    "image" : "Ubuntu 16.04",
+    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+    "vmResourceId" : "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+    "vmRegionId" : "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+    "vmUser" : "ubuntu",
+    "instanceTypeId" : "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+    "keyPairId" : "f40b961e-ae3f-4013-90f3-e89904a37621",
+    "openedPorts" : "22,80,8000-9000,9411",
+    "dockerHostNodeName" : "VM4_Amazon_Ubuntu16_04",
+    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
+  }, {
+    "csId" : "1",
+    "vmId" : "5",
+    "cspId" : "ARSY",
+    "cspName" : "Arsys",
+    "ram" : 2,
+    "cores" : 2,
+    "storage" : 1,
+    "image" : "Ubuntu 16.04",
+    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+    "vmResourceId" : "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
+    "vmRegionId" : "d112253a-951f-417a-a1f1-3a892bf35a45",
+    "vmUser" : "ubuntu",
+    "instanceTypeId" : "f554e8a1-29d8-48e5-bd68-c01417576628",
+    "keyPairId" : "f40b961e-ae3f-4013-90f3-e89904a37621",
+    "openedPorts" : "22,80,8000-9000,9411",
+    "dockerHostNodeName" : "VM5_Arsys_Ubuntu16_04",
+    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
+  }, {
+    "csId" : "13",
+    "vmId" : "6",
+    "cspId" : "AMAZ",
+    "cspName" : "Amazon",
+    "ram" : 4,
+    "cores" : 2,
+    "storage" : 1,
+    "image" : "Ubuntu 16.04",
+    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+    "vmResourceId" : "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+    "vmRegionId" : "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+    "vmUser" : "ubuntu",
+    "instanceTypeId" : "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+    "keyPairId" : "f40b961e-ae3f-4013-90f3-e89904a37621",
+    "openedPorts" : "22,80,8000-9000,9411",
+    "dockerHostNodeName" : "VM6_Amazon_Ubuntu16_04",
+    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
+  }, {
+    "csId" : "30",
+    "vmId" : "7",
+    "cspId" : "AZUR",
+    "cspName" : "Azure",
+    "ram" : 8,
+    "cores" : 2,
+    "storage" : 1,
+    "image" : "Ubuntu 16.04",
+    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+    "vmResourceId" : "369f40d5-d5e8-49e8-b9fa-593811972137",
+    "vmRegionId" : "81a29343-7580-4523-b670-03eeea5e9dae",
+    "vmUser" : "ubuntu",
+    "instanceTypeId" : "7b031b06-dc14-4017-9b7e-2ef97b32278d",
+    "keyPairId" : "f40b961e-ae3f-4013-90f3-e89904a37621",
+    "openedPorts" : "22,80,8000-9000,9411",
+    "dockerHostNodeName" : "VM7_Microsoft_Ubuntu16_04",
+    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
+  }, {
+    "csId" : "23",
+    "vmId" : "8",
+    "cspId" : "AMAZ",
+    "cspName" : "Amazon",
+    "ram" : 4,
+    "cores" : 2,
+    "storage" : 1,
+    "image" : "Ubuntu 16.04",
+    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+    "vmResourceId" : "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+    "vmRegionId" : "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+    "vmUser" : "ubuntu",
+    "instanceTypeId" : "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+    "keyPairId" : "f40b961e-ae3f-4013-90f3-e89904a37621",
+    "openedPorts" : "22,80,8000-9000,9411",
+    "dockerHostNodeName" : "VM8_Amazon_Ubuntu16_04",
+    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
+  }, {
+    "csId" : "4",
+    "vmId" : "9",
+    "cspId" : "ARSY",
+    "cspName" : "Arsys",
+    "ram" : 2,
+    "cores" : 2,
+    "storage" : 1,
+    "image" : "Ubuntu 16.04",
+    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+    "vmResourceId" : "27b1fb7b-2fd9-4042-8902-e4996e0bc420",
+    "vmRegionId" : "d112253a-951f-417a-a1f1-3a892bf35a45",
+    "vmUser" : "ubuntu",
+    "instanceTypeId" : "f554e8a1-29d8-48e5-bd68-c01417576628",
+    "keyPairId" : "f40b961e-ae3f-4013-90f3-e89904a37621",
+    "openedPorts" : "22,80,8000-9000,9411",
+    "dockerHostNodeName" : "VM9_Arsys_Ubuntu16_04",
+    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
+  }, {
+    "csId" : "19",
+    "vmId" : "10",
+    "cspId" : "AMAZ",
+    "cspName" : "Amazon",
+    "ram" : 4,
+    "cores" : 2,
+    "storage" : 1,
+    "image" : "Ubuntu 16.04",
+    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+    "vmResourceId" : "05d76ee4-3b7e-4726-8ff3-eb24f667c70d",
+    "vmRegionId" : "83dc7c1e-711c-4548-9a9e-128f9795cfed",
+    "vmUser" : "ubuntu",
+    "instanceTypeId" : "e3ca8e4c-0f91-4e83-9bd9-4cef88d054a8",
+    "keyPairId" : "f40b961e-ae3f-4013-90f3-e89904a37621",
+    "openedPorts" : "22,80,8000-9000,9411",
+    "dockerHostNodeName" : "VM10_Amazon_Ubuntu16_04",
+    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
+  }, {
+    "csId" : "35",
+    "vmId" : "11",
+    "cspId" : "AZUR",
+    "cspName" : "Azure",
+    "ram" : 8,
+    "cores" : 2,
+    "storage" : 1,
+    "image" : "Ubuntu 16.04",
+    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+    "vmResourceId" : "369f40d5-d5e8-49e8-b9fa-593811972137",
+    "vmRegionId" : "81a29343-7580-4523-b670-03eeea5e9dae",
+    "vmUser" : "ubuntu",
+    "instanceTypeId" : "7b031b06-dc14-4017-9b7e-2ef97b32278d",
+    "keyPairId" : "f40b961e-ae3f-4013-90f3-e89904a37621",
+    "openedPorts" : "22,80,8000-9000,9411",
+    "dockerHostNodeName" : "VM11_Microsoft_Ubuntu16_04",
+    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
+  }, {
+    "csId" : "30",
+    "vmId" : "12",
+    "cspId" : "AZUR",
+    "cspName" : "Azure",
+    "ram" : 8,
+    "cores" : 2,
+    "storage" : 1,
+    "image" : "Ubuntu 16.04",
+    "vmSoftwareId" : "21b7ebed-5076-43b6-8351-0e06cf16eedc",
+    "vmResourceId" : "369f40d5-d5e8-49e8-b9fa-593811972137",
+    "vmRegionId" : "81a29343-7580-4523-b670-03eeea5e9dae",
+    "vmUser" : "ubuntu",
+    "instanceTypeId" : "7b031b06-dc14-4017-9b7e-2ef97b32278d",
+    "keyPairId" : "f40b961e-ae3f-4013-90f3-e89904a37621",
+    "openedPorts" : "22,80,8000-9000,9411",
+    "dockerPrivateRegistryIp" : "82.223.98.37",
+    "dockerPrivateRegistryPort" : 80,
+    "dockerHostNodeName" : "VM12_Microsoft_Ubuntu16_04",
+    "cloudbrokerEndpoint" : "https://decide-prototype.cloudbroker.com"
+  } ],
+  "recommendedPatterns" : [ {
+    "isOptional" : false,
+    "title" : "Dynamic Data Normalization",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/dynamic-data-normalization",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Elasticity Manager",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/elasticity-manager",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    }, {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/scalability"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Micro Scatter-Gather",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/micro-scatter-gather",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Elastic Load Balancer",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/elastic-load-balancer",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    }, {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/availability"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Direct I/O Access",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/direct-io-access",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Content Distribution Network",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/content-distribution-network",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/deployment" ],
+    "selected" : true,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Throttling",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/throttling",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    }, {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/availability"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Service State Management",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/service-state-management",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/development" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Cloud Storage Device Performance Enforcement",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/cloud-storage-device-performance-enforcement",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/development" ],
+    "selected" : true,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Elastic Queue",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/elastic-queue",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    }, {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/scalability"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Direct LUN Access",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/direct-lun-access",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/optimization" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Usage Monitoring",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/usage-monitoring",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/development" ],
+    "selected" : false,
+    "provides" : [ {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/availability"
+    }, {
+      "abstractValue" : "high",
+      "impactedNFR" : "http://decideh2020.eu/resources/patterns/performance"
+    } ]
+  }, {
+    "isOptional" : false,
+    "title" : "Service Registry",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/service-registry",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
+    "selected" : false
+  }, {
+    "isOptional" : false,
+    "title" : "Two-Tier Cloud Application",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/two-tier-cloud-application",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
+    "selected" : false
+  }, {
+    "isOptional" : false,
+    "title" : "Loose Coupling",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/loose-coupling",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
+    "selected" : true
+  }, {
+    "isOptional" : false,
+    "title" : "Distributed Application",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/distributed-application",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
+    "selected" : true
+  }, {
+    "isOptional" : false,
+    "title" : "Three-Tier Cloud Application",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/three-tier-cloud-application",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
+    "selected" : false
+  }, {
+    "isOptional" : false,
+    "title" : "Managed Configuration",
+    "uriRef" : "http://decideh2020.eu/resources/patterns/managed-configuration",
+    "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
+    "selected" : false
+  } ],
+  "schema" : [ {
+    "microservices" : [ "11971eed-ecbd-464c-9492-da18f3405dd0" ],
+    "csId" : "21",
+    "vmId" : 4
+  }, {
+    "microservices" : [ "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b" ],
+    "csId" : "1",
+    "vmId" : 5
+  }, {
+    "microservices" : [ "99034c89-9f08-40b6-8b71-9eb1f6093f51" ],
+    "csId" : "13",
+    "vmId" : 6
+  }, {
+    "microservices" : [ "b2c4d15f-1a8a-4c06-b569-eafe736dcb40", "4511de74-a3b5-40ec-aebd-1d7abd5a8ef1" ],
+    "csId" : "30",
+    "vmId" : 7
+  }, {
+    "microservices" : [ "d5b06f60-557f-4f1f-8e8f-d7f6ebe18639" ],
+    "csId" : "23",
+    "vmId" : 8
+  }, {
+    "microservices" : [ "92be1c45-1f8f-484f-b83f-1c2359ad27a2" ],
+    "csId" : "4",
+    "vmId" : 9
+  }, {
+    "microservices" : [ "0b7c3308-3987-42fc-997f-575a3aaea2f5" ],
+    "csId" : "19",
+    "vmId" : 10
+  }, {
+    "microservices" : [ "1399c249-e194-44fd-b4c7-407c2364d8b7" ],
+    "csId" : "35",
+    "vmId" : 11
+  }, {
+    "microservices" : [ "7c096319-beb0-4449-89a8-e23c06fe75a1" ],
+    "csId" : "30",
+    "vmId" : 12
+  } ],
+  "monitoring" : {
+    "status" : false,
+    "urls" : [ "http://adapt.monitoring.grafana:3000/d/XjHRVcyWk/sockshopv17-performance-1" ]
   },
-  "consulJoinIp": "82.223.81.97"
+  "applicationInstanceId" : "3a194f1c-dcc9-4c18-8e54-2708b00e6eb2",
+  "consulJoinIp" : "82.223.81.97"
 }
