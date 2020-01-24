@@ -1380,28 +1380,6 @@
       ],
       "csId": "30",
       "vmId": 4
-    },
-    {
-      "microservices": [
-        "99034c89-9f08-40b6-8b71-9eb1f6093f51",
-        "b2c4d15f-1a8a-4c06-b569-eafe736dcb40"
-      ],
-      "csId": "48",
-      "vmId": 5
-    },
-    {
-      "microservices": [
-        "d5b06f60-557f-4f1f-8e8f-d7f6ebe18639"
-      ],
-      "csId": "48",
-      "vmId": 6
-    },
-    {
-      "microservices": [
-        "4511de74-a3b5-40ec-aebd-1d7abd5a8ef1"
-      ],
-      "csId": "48",
-      "vmId": 7
     }
   ],
   "monitoring": {
