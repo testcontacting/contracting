@@ -1547,6 +1547,13 @@
       ],
       "csId": "13",
       "vmId": 10
+    },
+    {
+      "microservices": [
+        "0b7c3308-3987-42fc-997f-575a3aaea2f5"
+      ],
+      "csId": "1",
+      "vmId": 10
     }
   ],
   "monitoring": {
