@@ -1158,11 +1158,7 @@
     "categories" : [ "http://decideh2020.eu/resources/patterncategories/basic" ],
     "selected" : false
   } ],
-  "schema" : [ {
-    "microservices" : [ "11971eed-ecbd-464c-9492-da18f3405dd0" ],
-    "csId" : "15",
-    "vmId" : 4                    
-  }, {
+  "schema" : [  {
     "microservices" : [ "6cb8514d-180e-4c9e-b9dd-7cb0081cb14b" ],
     "csId" : "35",
     "vmId" : 5
@@ -1176,20 +1172,12 @@
     "vmId" : 7
   }, {
     "microservices" : [ "4511de74-a3b5-40ec-aebd-1d7abd5a8ef1", "7c096319-beb0-4449-89a8-e23c06fe75a1" ],
-    "csId" : "21",
+    "csId" : "47",
     "vmId" : 8
-  }, {
-    "microservices" : [ "92be1c45-1f8f-484f-b83f-1c2359ad27a2" ],
-    "csId" : "16",
-    "vmId" : 9
   }, {
     "microservices" : [ "0b7c3308-3987-42fc-997f-575a3aaea2f5" ],
     "csId" : "13",
     "vmId" : 10
-  }, {
-    "microservices" : [ "1399c249-e194-44fd-b4c7-407c2364d8b7" ],
-    "csId" : "41",
-    "vmId" : 11
   } ],
   "monitoring" : {
     "status" : false,
