@@ -1186,7 +1186,7 @@
       "vmResourceId": "7f59153e-a9df-4ff7-9936-fc4a7b303f75",
       "vmRegionId": "48e97118-ef76-4241-9133-5a8d8692decc",
       "instanceTypeId": "c805b72b-1bcc-4c0c-8f6c-1dc6fe17f811",
-      "keyPairId": "fcf90693-649a-4c02-b680-8eae9e9045f0",
+      "keyPairId": "759ab755-ac9b-4be2-8e14-031b3a1d2a09",
       "cloudbrokerEndpoint": "https://platform.cloudbroker.com"
     },
     {
@@ -1202,7 +1202,7 @@
       "vmResourceId": "72d43b50-4ff1-4991-b73c-bf2fed1606f5",
       "vmRegionId": "d4a39345-f00f-4c2e-a085-c8861701fe26",
       "instanceTypeId": "816219c6-85f0-4e88-bdf3-c7ffdeb133ff",
-      "keyPairId": "fcf90693-649a-4c02-b680-8eae9e9045f0",
+      "keyPairId": "759ab755-ac9b-4be2-8e14-031b3a1d2a09",
       "cloudbrokerEndpoint": "https://platform.cloudbroker.com"
     },
     {
@@ -1218,7 +1218,7 @@
       "vmResourceId": "72d43b50-4ff1-4991-b73c-bf2fed1606f5",
       "vmRegionId": "d4a39345-f00f-4c2e-a085-c8861701fe26",
       "instanceTypeId": "816219c6-85f0-4e88-bdf3-c7ffdeb133ff",
-      "keyPairId": "fcf90693-649a-4c02-b680-8eae9e9045f0",
+      "keyPairId": "759ab755-ac9b-4be2-8e14-031b3a1d2a09",
       "cloudbrokerEndpoint": "https://platform.cloudbroker.com"
     },
     {
@@ -1234,7 +1234,7 @@
       "vmResourceId": "668b555d-c558-4327-be03-1eaa9684db16",
       "vmRegionId": "369a17bc-3358-48b7-958e-8ec9ef46986c",
       "instanceTypeId": "c71fc89a-7c87-474a-8c12-d961ec7baa9f",
-      "keyPairId": "fcf90693-649a-4c02-b680-8eae9e9045f0",
+      "keyPairId": "759ab755-ac9b-4be2-8e14-031b3a1d2a09",
       "cloudbrokerEndpoint": "https://platform.cloudbroker.com"
     },
     {
@@ -1250,7 +1250,7 @@
       "vmResourceId": "72d43b50-4ff1-4991-b73c-bf2fed1606f5",
       "vmRegionId": "d4a39345-f00f-4c2e-a085-c8861701fe26",
       "instanceTypeId": "816219c6-85f0-4e88-bdf3-c7ffdeb133ff",
-      "keyPairId": "fcf90693-649a-4c02-b680-8eae9e9045f0",
+      "keyPairId": "759ab755-ac9b-4be2-8e14-031b3a1d2a09",
       "cloudbrokerEndpoint": "https://platform.cloudbroker.com"
     }
   ],
